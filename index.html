@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Shared PCX Assets&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Inter font --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Font Awesome for Icons (Copy) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Custom scrollbar styling for aesthetics */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #F38020; /* CF Orange */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-padding {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.section-padding {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 6rem 4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Modal Backdrop */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-backdrop {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(0, 0, 0, 0.7);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Custom Gradient Class for Hero Section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lava-gradient {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #FF6633 0%, #F6821F 50%, #FBAD41 100%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind Configuration for Cloudflare colors --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tailwind.config = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>theme: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>extend: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>colors: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'cf-orange': '#F38020', // Primary Cloudflare-like orange</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'cf-light': '#FFF8F4',<span class="Apple-converted-space">  </span>// Very light off-white/orange tint</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gray-50 text-gray-800"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Header &amp; Navigation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="sticky top-0 z-50 bg-white shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center h-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Logo/Title --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex-shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-2xl font-extrabold text-cf-orange tracking-tight"&gt;PCX Content Strategy&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-gray-500 text-sm font-medium ml-2 hidden sm:inline"&gt;Shared Assets&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Navigation Links --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;nav class="hidden md:flex space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#content" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium"&gt;Prompts&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#video" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium"&gt;Video&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#design" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium"&gt;Guides&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#metrics" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium"&gt;Metrics&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Mobile Menu Button (placeholder) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="md:hidden p-2 rounded-md hover:bg-gray-100 transition duration-150"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hero Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="lava-gradient section-padding text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-4xl sm:text-6xl font-extrabold mb-4"&gt;Sharing Knowledge, Scaling Excellence.&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-xl sm:text-2xl font-light opacity-90 max-w-3xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Discover reusable assets, guides, and prompts created by the PCX team to streamline your work and maintain a consistent user experience across the company.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Main Content Sections Container --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="max-w-7xl mx-auto"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- CONTENT Section (PCX AI Prompts) - Now 3 Rows, Clickable Cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="content" class="section-padding bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl sm:text-4xl font-bold text-cf-orange mb-3 pb-1"&gt;PCX AI Prompts&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-500 mb-12 border-b-2 border-gray-200 pb-3"&gt;Click any prompt card below to open the full prompt text in a modal, where you can easily copy it with a single click.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Row 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 1: CF1 AI Decisions --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'CF1 AI Decisions',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Act as a Content Strategist for a cloud security company. Review the following feature description for clarity, security focus, and tone. Suggest two alternative headlines. [INSERT FEATURE DESCRIPTION]'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;CF1 AI Decisions&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;A collection of validated prompts for rapid content generation, summarization, and tone-of-voice checks using the Gemini API.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 2: Core Dash AI Decisions (v3.1) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Core Dash AI Decisions (v3.1)',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Using the Cloudflare Product Style Guide (v3.1), rewrite the following error message to be polite, actionable, and avoid jargon. Original message: "A 503 error occurred due to an invalid configuration state." New message:'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;Core Dash AI Decisions (v3.1)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;The definitive guide for voice, tone, grammar, and terminology across all Cloudflare product interfaces and documentation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 3: PCX Video Scripts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'PCX Video Scripts',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Generate a 60-second animated video script explaining the benefits of Zero Trust to an audience of small business owners. Focus on simple analogies and use a friendly, educational tone. Script format should include: [SCENE], [VISUALS], [VOICEOVER].'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;PCX Video Scripts&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;Standardized spreadsheet and methodology for reviewing existing content and identifying areas for improvement or deprecation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 4: Feature Naming Prompt --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Feature Naming Prompt',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Suggest 5 potential names for a new Firewall feature that uses machine learning to detect anomalous traffic patterns. The names must be easy to remember, non-technical, and align with Cloudflare\'s brand guidelines. Provide a 1-sentence rationale for each.'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;Feature Naming Prompt&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;A framework prompt to generate and evaluate new feature names based on clarity, memorability, and brand alignment.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Row 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 5: Error Message Review (v3.1) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Error Message Review (v3.1)',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Apply the following system instructions to future outputs: "You are an empathetic UX writer. All error messages must offer a clear solution or next step, even if the user cannot fix it themselves." Rewrite: "Error 404: Resource Not Found."'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;Error Message Review (v3.1)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;The definitive prompt set for ensuring error messages are helpful, actionable, and adhere to our user-centric tone.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 6: API Documentation Summary --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'API Documentation Summary',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Summarize the following API documentation update into a release note aimed at developers. Highlight breaking changes and new methods. [INSERT API DOCS LINK/TEXT]'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;API Documentation Summary&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;A powerful prompt to summarize complex API changes into digestible release notes for general audiences.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 7: User Journey Mapping Prompt (New) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'User Journey Mapping Prompt',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Identify the 5 core steps a new user takes when setting up a Worker. For each step, identify potential points of friction and suggest a content intervention (tooltip, success message, guide link).'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;User Journey Mapping Prompt&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;A guided prompt set to help define user personas, pain points, and success metrics for new feature adoption.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 8: Release Note Summary Prompt (New) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Release Note Summary Prompt',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Condense this technical documentation into a Twitter thread (5 tweets maximum) for a general audience. Focus on customer benefit rather than technical implementation details. [INSERT DOC TEXT]'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;Release Note Summary Prompt&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;A system instruction to condense technical release notes into clear, customer-facing communications across different channels.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Row 3 (Contains only 1 card now) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 9: Competitive Analysis Framework (New) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showPromptModal(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Competitive Analysis Framework',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Compare our product messaging regarding DDoS protection against competitors A and B. Analyze their use of fear, uncertainty, and doubt (FUD) versus our proactive, educational tone. Output a JSON array listing key differentiators.'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;Competitive Analysis Framework&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;A structured prompt to generate a comparative analysis of competitor messaging and identify our core differentiation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- VIDEO Section (Reusable Video Assets) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="video" class="section-padding bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl sm:text-4xl font-bold text-cf-orange mb-3 pb-1"&gt;Reusable Video Assets&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-500 mb-12 border-b-2 border-gray-200 pb-3"&gt;Click any asset card to view the GIF preview and quickly copy the direct asset URL link from the modal.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Base URL for R2 assets --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Note: Assumes GIFs are named lowercase, hyphenated, e.g., 'loading-state.gif' --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const R2_BASE_URL = 'https://2f3dc21d188ba781322b520bbde5fb5a.r2.cloudflarestorage.com/katiesharedassetsite/';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Visible 4-Column Grid (Initial View) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="initial-assets-grid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 1: Loading State --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showAssetModal('Loading State', R2_BASE_URL + 'loading-state.gif', 'https://mock-asset-link/loading_state.json')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Loading+State" class="w-full h-24 object-cover rounded-md mb-2" alt="Loading animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Loading State&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 2: Button Hover --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showAssetModal('Button Hover', R2_BASE_URL + 'button-hover.gif', 'https://mock-asset-link/button_hover.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Button+Hover" class="w-full h-24 object-cover rounded-md mb-2" alt="Button hover effect example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Button Hover&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 3: Header Drop --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showAssetModal('Header Drop', R2_BASE_URL + 'header-drop.gif', 'https://mock-asset-link/header_drop.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Header+Drop" class="w-full h-24 object-cover rounded-md mb-2" alt="Header drop animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Header Drop&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 4: Success Icon --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>onclick="showAssetModal('Success Icon', R2_BASE_URL + 'success-icon.gif', 'https://mock-asset-link/success_icon.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Success+Icon" class="w-full h-24 object-cover rounded-md mb-2" alt="Success icon animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Success Icon&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Toggle Button --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-8 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="toggle-button" onclick="toggleAssets()" class="inline-flex items-center px-6 py-3 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:bg-opacity-90 transition duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="toggle-text"&gt;Show 20 More Assets&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg id="toggle-icon" class="w-4 h-4 ml-2 transition-transform duration-300 transform rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Hidden 4x5 Grid (Initially Hidden) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="extra-assets-grid" class="hidden mt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-2 sm:grid-cols-4 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 5: Error Shake --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Error Shake', R2_BASE_URL + 'error-shake.gif', 'https://mock-asset-link/error_shake.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Error+Shake" class="w-full h-24 object-cover rounded-md mb-2" alt="Error shake animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Error Shake&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 6: Toggle Flip --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Toggle Flip', R2_BASE_URL + 'toggle-flip.gif', 'https://mock-asset-link/toggle_flip.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Toggle+Flip" class="w-full h-24 object-cover rounded-md mb-2" alt="Toggle switch animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Toggle Flip&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 7: Progress Bar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Progress Bar', R2_BASE_URL + 'progress-bar.gif', 'https://mock-asset-link/progress_bar.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Progress+Bar" class="w-full h-24 object-cover rounded-md mb-2" alt="Progress bar animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Progress Bar&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 8: CF Warp --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('CF Warp', R2_BASE_URL + 'cf-warp.gif', 'https://mock-asset-link/cf_warp.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=CF+Warp" class="w-full h-24 object-cover rounded-md mb-2" alt="Cloudflare warp animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;CF Warp&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Row 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 9: Icon Fade --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Icon Fade', R2_BASE_URL + 'icon-fade.gif', 'https://mock-asset-link/icon_fade.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Icon+Fade" class="w-full h-24 object-cover rounded-md mb-2" alt="Icon fade animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Icon Fade&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 10: Pulse Effect --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Pulse Effect', R2_BASE_URL + 'pulse-effect.gif', 'https://mock-asset-link/pulse.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Pulse+Effect" class="w-full h-24 object-cover rounded-md mb-2" alt="Pulse effect animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Pulse Effect&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 11: Checkmark --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Checkmark', R2_BASE_URL + 'checkmark.gif', 'https://mock-asset-link/checkmark.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Checkmark" class="w-full h-24 object-cover rounded-md mb-2" alt="Checkmark reveal animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Checkmark&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 12: Cloud Swoosh --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Cloud Swoosh', R2_BASE_URL + 'cloud-swoosh.gif', 'https://mock-asset-link/cloud_swoosh.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Cloud+Swoosh" class="w-full h-24 object-cover rounded-md mb-2" alt="Cloud swoosh animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Cloud Swoosh&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Row 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 13: Text Reveal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Text Reveal', R2_BASE_URL + 'text-reveal.gif', 'https://mock-asset-link/text_reveal.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Text+Reveal" class="w-full h-24 object-cover rounded-md mb-2" alt="Text reveal animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Text Reveal&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 14: Map Pin --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Map Pin', R2_BASE_URL + 'map-pin.gif', 'https://mock-asset-link/map_pin.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Map+Pin" class="w-full h-24 object-cover rounded-md mb-2" alt="Map pin drop animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Map Pin&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 15: Server Wiggle --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Server Wiggle', R2_BASE_URL + 'server-wiggle.gif', 'https://mock-asset-link/server_wiggle.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Server+Wiggle" class="w-full h-24 object-cover rounded-md mb-2" alt="Server wiggle animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Server Wiggle&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 16: Data Flow --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Data Flow', R2_BASE_URL + 'data-flow.gif', 'https://mock-asset-link/data_flow.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Data+Flow" class="w-full h-24 object-cover rounded-md mb-2" alt="Data flow animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Data Flow&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Row 4 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 17: Alert Bounce --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Alert Bounce', R2_BASE_URL + 'alert-bounce.gif', 'https://mock-asset-link/alert_bounce.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Alert+Bounce" class="w-full h-24 object-cover rounded-md mb-2" alt="Alert bounce animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Alert Bounce&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 18: Key Rotate --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Key Rotate', R2_BASE_URL + 'key-rotate.gif', 'https://mock-asset-link/key_rotate.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Key+Rotate" class="w-full h-24 object-cover rounded-md mb-2" alt="Key rotate animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Key Rotate&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 19: Lock Toggle --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Lock Toggle', R2_BASE_URL + 'lock-toggle.gif', 'https://mock-asset-link/lock_toggle.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Lock+Toggle" class="w-full h-24 object-cover rounded-md mb-2" alt="Lock toggle animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Lock Toggle&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 20: Bar Chart --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Bar Chart', R2_BASE_URL + 'bar-chart.gif', 'https://mock-asset-link/bar_chart.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Bar+Chart" class="w-full h-24 object-cover rounded-md mb-2" alt="Bar chart animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Bar Chart&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Row 5 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 21: Pie Chart --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Pie Chart', R2_BASE_URL + 'pie-chart.gif', 'https://mock-asset-link/pie_chart.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Pie+Chart" class="w-full h-24 object-cover rounded-md mb-2" alt="Pie chart animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Pie Chart&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 22: Settings Spin --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Settings Spin', R2_BASE_URL + 'settings-spin.gif', 'https://mock-asset-link/settings_spin.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Settings+Spin" class="w-full h-24 object-cover rounded-md mb-2" alt="Settings spin animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Settings Spin&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 23: Warning Flash --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Warning Flash', R2_BASE_URL + 'warning-flash.gif', 'https://mock-asset-link/warning_flash.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Warning+Flash" class="w-full h-24 object-cover rounded-md mb-2" alt="Warning flash animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Warning Flash&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Card 24: Shield Appear --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onclick="showAssetModal('Shield Appear', R2_BASE_URL + 'shield-appear.gif', 'https://mock-asset-link/shield_appear.aep')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/200x120/F38020/ffffff?text=Shield+Appear" class="w-full h-24 object-cover rounded-md mb-2" alt="Shield appear animation example gif"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-semibold text-gray-700 mb-1 truncate"&gt;Shield Appear&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Toggle Button --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-8 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="toggle-button-bottom" onclick="toggleAssets()" class="inline-flex items-center px-6 py-3 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:bg-opacity-90 transition duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="toggle-text-bottom"&gt;Show 20 More Assets&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg id="toggle-icon-bottom" class="w-4 h-4 ml-2 transition-transform duration-300 transform rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Guidance Link (Always visible) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-8 text-center" id="guidance-link-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#" class="inline-block text-gray-600 font-medium hover:text-cf-orange transition duration-150 text-sm border-b border-gray-400 pb-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Need guidance? View Video Team Wiki &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- DESIGN Section (Content Strategy Guides) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="design" class="section-padding bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl sm:text-4xl font-bold text-cf-orange mb-3 pb-1"&gt;Content Strategy Guides&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-500 mb-12 border-b-2 border-gray-200 pb-3"&gt;These cards contain permanent links to our evergreen style guides, Figma components, and reference documentation. Click a link within a card to view the asset.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- NEW CARD: PCX-Built Tools (FIRST POSITION) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;PCX-Built Tools&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;Internal apps and specialized tools created by PCX to automate audits, content checks, and accessibility compliance.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul class="text-gray-600 space-y-2 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Automated Link Checker &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Tone-of-Voice Audit App &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Taxonomy Validator &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 6: Strategy Resources (UPDATED) (SECOND POSITION) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;Content Strategies&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul class="text-gray-600 space-y-2 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Components Library (Figma) &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Color Tokens Reference &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Typography Styles &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Interaction Patterns Guide &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Desktop Layout Templates &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Asset Card 7: Grammer &amp; Word Choice (THIRD POSITION) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;Grammar &amp; Word Choices&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul class="text-gray-600 space-y-2 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Content Style Guide (v3.1) &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Global Terminology List &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Product-Specific Glossary &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="#" class="text-cf-orange font-medium hover:underline flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>Accessibility Guidelines &amp;rarr;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Cloudflare Brand Guides (Now wraps to next line on desktop) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-semibold mb-3 text-gray-900"&gt;Branding assets&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4 text-sm"&gt;Access to the approved set of Phosphor and custom-designed icons for product interfaces and illustrations.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#" class="mt-4 inline-block text-cf-orange font-medium hover:underline text-sm"&gt;Browse Icon Library &amp;rarr;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- METRICS Section (Real-Time Counters) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="metrics" class="section-padding bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl sm:text-4xl font-bold text-gray-700 mb-12 border-b-2 border-gray-300 pb-3"&gt;Usage Metrics (Real-Time)&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid md:grid-cols-3 gap-8"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Card 1: Prompts Copied --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-5xl font-extrabold text-cf-orange" id="metric-prompts-copied"&gt;0&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-lg font-semibold text-gray-700"&gt;AI Prompts Copied&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-500"&gt;Total utility of content strategies.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Card 2: Videos Copied --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-5xl font-extrabold text-cf-orange" id="metric-videos-copied"&gt;0&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-lg font-semibold text-gray-700"&gt;Video Assets Copied&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-500"&gt;Total reuse of motion graphics.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Card 3: Page Views --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-5xl font-extrabold text-cf-orange" id="metric-page-views"&gt;0&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-lg font-semibold text-gray-700"&gt;Total Site Views&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-gray-500"&gt;Overall exposure of shared assets.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">       </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PROMPT MODAL STRUCTURE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="prompt-modal" class="modal-backdrop hidden" onclick="if (event.target.id === 'prompt-modal') closeModal()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white w-11/12 md:w-3/4 lg:w-1/2 p-6 rounded-2xl shadow-2xl relative"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Modal Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-start mb-4 border-b pb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 id="modal-title" class="text-2xl font-bold text-gray-900 truncate"&gt;Prompt Title&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal()" class="text-gray-500 hover:text-gray-900 transition-colors p-2 rounded-full hover:bg-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-times"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Scrollable Prompt Text Area --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="relative h-64 md:h-80 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;textarea id="modal-prompt-text" readonly<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                          </span>class="w-full h-full p-4 border border-gray-300 rounded-lg text-gray-700 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-cf-orange bg-gray-50 overflow-y-scroll"</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>placeholder="Loading prompt content..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Copy Button --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-end"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="copy-modal-button" onclick="copyModalContent(this)" class="inline-flex items-center px-4 py-2 bg-cf-orange text-white font-medium rounded-lg shadow-md hover:opacity-90 transition duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-copy mr-2"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Copy Prompt</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- END PROMPT MODAL STRUCTURE --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ASSET MODAL STRUCTURE (for Video/Design Assets) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="asset-modal" class="modal-backdrop hidden" onclick="if (event.target.id === 'asset-modal') closeAssetModal()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white w-11/12 md:w-3/4 lg:w-1/3 p-6 rounded-2xl shadow-2xl relative"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Modal Header/Title --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-start mb-4 border-b pb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 id="asset-modal-title" class="text-2xl font-bold text-gray-900 truncate"&gt;Asset Title&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeAssetModal()" class="text-gray-500 hover:text-gray-900 transition-colors p-2 rounded-full hover:bg-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-times"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Asset Display and Copyable Link --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img id="asset-modal-image" src="" class="w-full h-auto object-cover rounded-lg mb-4 shadow-md" alt="Asset Preview"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600 mb-2 text-sm font-semibold"&gt;Asset URL (Mock Link):&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;textarea id="asset-modal-url-display" readonly<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                          </span>class="w-full p-2 border border-gray-300 rounded-lg text-gray-700 font-mono text-xs resize-none focus:outline-none focus:ring-2 focus:ring-cf-orange bg-gray-50 h-10 overflow-hidden"</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>rows="1" placeholder="URL will appear here."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Copy Button (Asset) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-end"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="copy-asset-modal-button" onclick="copyAssetModalContent(this)" class="inline-flex items-center px-4 py-2 bg-cf-orange text-white font-medium rounded-lg shadow-md hover:opacity-90 transition duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fas fa-copy mr-2"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Copy Asset URL</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- END ASSET MODAL STRUCTURE --&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- JavaScript for Interactions and Firebase (Unified Module) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="module"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>import { getFirestore, doc, onSnapshot, setDoc, updateDoc, increment, getDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Global Firebase variables accessible within this module</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let app;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let db;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let auth;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let userId;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let isFirebaseReady = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Constants for Firebase Configuration</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Accessing globals via window object to prevent potential SyntaxErrors inside module scope</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const appId = typeof window.__app_id !== 'undefined' ? window.__app_id : 'default-app-id';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let firebaseConfig = {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const configString = typeof window.__firebase_config !== 'undefined' ? window.__firebase_config : '{}';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>firebaseConfig = JSON.parse(configString);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} catch (e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.error("Error parsing __firebase_config:", e);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const initialAuthToken = typeof window.__initial_auth_token !== 'undefined' ? window.__initial_auth_token : null;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const METRICS_DOC_PATH = `artifacts/${appId}/public/data/metrics/analytics`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- FIREBASE INITIALIZATION &amp; AUTHENTICATION ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function initializeFirebase() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setLogLevel('Debug');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (Object.keys(firebaseConfig).length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.warn("Firebase configuration is empty. Metrics will not function and will display 0.");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>app = initializeApp(firebaseConfig);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>auth = getAuth(app);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>db = getFirestore(app);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Sign in with token or anonymously</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (initialAuthToken) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>await signInWithCustomToken(auth, initialAuthToken);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>await signInAnonymously(auth);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Wait for auth state to be confirmed</p>
+<p class="p1"><span class="Apple-converted-space">                </span>onAuthStateChanged(auth, (user) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (user) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>userId = user.uid;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>isFirebaseReady = true;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>console.log("Firebase initialized. User ID:", userId);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>setupMetricsTracking();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Fallback if anonymous sign-in fails</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>userId = crypto.randomUUID();</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>console.error("Firebase auth failed, using random UUID for userId:", userId);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>setupMetricsTracking();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error("Error initializing Firebase:", error);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- FIREBASE METRICS LOGIC ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function getAnalyticsDocRef() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!db) return null;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return doc(db, METRICS_DOC_PATH);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function attemptIncrement(field, retries = 3, delay = 1000) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const docRef = getAnalyticsDocRef();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!docRef || !isFirebaseReady) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error("Firestore not ready or auth pending for increment.");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; retries; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Check if the document exists first (or get initial state)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const docSnap = await getDoc(docRef);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!docSnap.exists()) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Initialize the document with default values</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>await setDoc(docRef, {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>page_views: 0,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>prompts_copied: 0,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>videos_copied: 0</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Since we initialize it, we can continue to the update</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Perform the increment</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>await updateDoc(docRef, { [field]: increment(1) });</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>console.log(`Successfully incremented ${field}`);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return; // Success, exit the loop</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (i === retries - 1) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>console.error(`Failed to increment ${field} after ${retries} attempts:`, error);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Show user-facing error indication in metrics section if needed</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Exponential backoff</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>await new Promise(resolve =&gt; setTimeout(resolve, delay * Math.pow(2, i)));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Wrapper function to start increment with backoff</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function incrementCounter(field) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>attemptIncrement(field);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setupMetricsTracking() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const docRef = getAnalyticsDocRef();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!docRef) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error("Metrics setup aborted: Firestore not ready.");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 1. Increment Page Views immediately</p>
+<p class="p1"><span class="Apple-converted-space">            </span>incrementCounter('page_views');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 2. Set up Real-time listener for all three metrics</p>
+<p class="p1"><span class="Apple-converted-space">            </span>onSnapshot(docRef, (doc) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const metricPageViews = document.getElementById('metric-page-views');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const metricPromptsCopied = document.getElementById('metric-prompts-copied');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const metricVideosCopied = document.getElementById('metric-videos-copied');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (doc.exists()) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const data = doc.data();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>metricPageViews.textContent = data.page_views || 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>metricPromptsCopied.textContent = data.prompts_copied || 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>metricVideosCopied.textContent = data.videos_copied || 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Document doesn't exist yet, display 0s</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>metricPageViews.textContent = '0';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>metricPromptsCopied.textContent = '0';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>metricVideosCopied.textContent = '0';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, (error) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error("Error listening to metrics:", error);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('metric-page-views').textContent = 'ERR';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('metric-prompts-copied').textContent = 'ERR';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('metric-videos-copied').textContent = 'ERR';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- UTILITY/MODAL FUNCTIONS (Made globally accessible by attaching to window) ---</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Function to open the prompt modal and load content</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.showPromptModal = function(title, promptText) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-title').textContent = title;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-prompt-text').value = promptText;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('prompt-modal').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.classList.add('overflow-hidden'); // Prevent background scrolling</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Function to close the prompt modal</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.closeModal = function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('prompt-modal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.classList.remove('overflow-hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Reset button state just in case</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const button = document.getElementById('copy-modal-button');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.innerHTML = '&lt;i class="fas fa-copy mr-2"&gt;&lt;/i&gt;Copy Prompt';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.remove('bg-green-600');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.add('bg-cf-orange');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Function to copy the prompt modal content and track metric</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.copyModalContent = function(button) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const textarea = document.getElementById('modal-prompt-text');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>textarea.select();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>textarea.setSelectionRange(0, 99999);<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Use document.execCommand('copy') as navigator.clipboard may fail in iframe environments</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.execCommand('copy');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error('Copy failed:', err);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Simple visual error state if needed</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Increment the prompt copy counter</p>
+<p class="p1"><span class="Apple-converted-space">            </span>incrementCounter('prompts_copied');<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Provide visual feedback</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const originalHTML = button.innerHTML;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.innerHTML = '&lt;i class="fas fa-check-circle mr-2"&gt;&lt;/i&gt;Copied! ✅';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.remove('bg-cf-orange');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.add('bg-green-600');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.disabled = true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.innerHTML = originalHTML;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.remove('bg-green-600');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.add('bg-cf-orange');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 1500);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- ASSET MODAL FUNCTIONS ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.showAssetModal = function(title, imageUrl, assetUrl) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('asset-modal-title').textContent = title;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// NOTE: Replacing original R2 URL with a placeholder as R2 link won't load here.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('asset-modal-image').src = `https://placehold.co/400x200/F38020/ffffff?text=Preview%20of%20${encodeURIComponent(title)}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('asset-modal-url-display').value = assetUrl;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('asset-modal').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.classList.add('overflow-hidden');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const button = document.getElementById('copy-asset-modal-button');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.innerHTML = '&lt;i class="fas fa-copy mr-2"&gt;&lt;/i&gt;Copy Asset URL';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.remove('bg-green-600');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.add('bg-cf-orange');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.closeAssetModal = function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('asset-modal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.classList.remove('overflow-hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Function to copy asset URL and track metric</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.copyAssetModalContent = function(button) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const textarea = document.getElementById('asset-modal-url-display');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>textarea.select();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>textarea.setSelectionRange(0, 99999);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.execCommand('copy');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error('Copy failed:', err);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Increment the video copy counter</p>
+<p class="p1"><span class="Apple-converted-space">            </span>incrementCounter('videos_copied');<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const originalHTML = button.innerHTML;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.innerHTML = '&lt;i class="fas fa-check-circle mr-2"&gt;&lt;/i&gt;Copied! ✅';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.remove('bg-cf-orange');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.classList.add('bg-green-600');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>button.disabled = true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.innerHTML = originalHTML;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.remove('bg-cf-orange');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.classList.add('bg-cf-orange');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 1500);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- TOGGLE FUNCTION ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.toggleAssets = function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const extraAssetsGrid = document.getElementById('extra-assets-grid');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const toggleTextTop = document.getElementById('toggle-text');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const toggleIconTop = document.getElementById('toggle-icon');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const toggleTextBottom = document.getElementById('toggle-text-bottom');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const toggleIconBottom = document.getElementById('toggle-icon-bottom');</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (extraAssetsGrid.classList.contains('hidden')) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>extraAssetsGrid.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>toggleTextTop.textContent = 'Show Fewer Assets';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>toggleTextBottom.textContent = 'Show Fewer Assets';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>toggleIconTop.classList.add('rotate-180');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>toggleIconBottom.classList.add('rotate-180');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>extraAssetsGrid.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>toggleTextTop.textContent = 'Show 20 More Assets';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>toggleTextBottom.textContent = 'Show 20 More Assets';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>toggleIconTop.classList.remove('rotate-180');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>toggleIconBottom.classList.remove('rotate-180');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize Firebase on window load</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.onload = initializeFirebase;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="bg-gray-900 text-white py-6 mt-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&amp;copy; 2025 PCX Content Strategy Team. All Rights Reserved.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
