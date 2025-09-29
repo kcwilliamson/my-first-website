@@ -77,9 +77,8 @@
                 <!-- Navigation Links -->
                 <nav class="hidden md:flex space-x-4">
                     <a href="#content" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium">Prompts</a>
-                    <a href="#video" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium">Video</a>
+                    <a href="#video" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium">Video </a>
                     <a href="#design" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium">Guides</a>
-                    <a href="#metrics" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium">Metrics</a>
                 </nav>
                 <!-- Mobile Menu Button (placeholder) -->
                 <button class="md:hidden p-2 rounded-md hover:bg-gray-100 transition duration-150">
@@ -122,6 +121,15 @@
                     <p class="text-gray-600 mb-4 text-sm">A collection of validated prompts for rapid content generation, summarization, and tone-of-voice checks using the Gemini API.</p>
                 </div>
 
+                <!-- Asset Card 2: Core Dash AI Decisions (v3.1) -->
+                <div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"
+                    onclick="showPromptModal(
+                        'Core Dash AI Decisions (v3.1)', 
+                        'Using the Cloudflare Product Style Guide (v3.1), rewrite the following error message to be polite, actionable, and avoid jargon. Original message: "A 503 error occurred due to an invalid configuration state." New message:'
+                    )">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">Core Dash AI Decisions (v3.1)</h3>
+                    <p class="text-gray-600 mb-4 text-sm">The definitive guide for voice, tone, grammar, and terminology across all Cloudflare product interfaces and documentation.</p>
+                </div>
 
                 <!-- Asset Card 3: PCX Video Scripts -->
                 <div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"
@@ -133,17 +141,6 @@
                     <p class="text-gray-600 mb-4 text-sm">Standardized spreadsheet and methodology for reviewing existing content and identifying areas for improvement or deprecation.</p>
                 </div>
 
-               
-                <!-- Asset Card 4: Feature Naming Prompt -->
-                <div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"
-                    onclick="showPromptModal(
-                        'Feature Naming Prompt', 
-                        'Suggest 5 potential names for a new Firewall feature that uses machine learning to detect anomalous traffic patterns. The names must be easy to remember, non-technical, and align with Cloudflare\'s brand guidelines. Provide a 1-sentence rationale for each.'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">Feature Naming Prompt</h3>
-                    <p class="text-gray-600 mb-4 text-sm">A framework prompt to generate and evaluate new feature names based on clarity, memorability, and brand alignment.</p>
-                </div>
-                
                 <!-- Asset Card 4: Feature Naming Prompt -->
                 <div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 cursor-pointer hover:shadow-2xl"
                     onclick="showPromptModal(
@@ -222,7 +219,7 @@
             <!-- Base URL for R2 assets -->
             <!-- Note: Assumes GIFs are named lowercase, hyphenated, e.g., 'loading-state.gif' -->
             <script>
-                const R2_BASE_URL = 'https://2f3dc21d188ba781322b520bbde5fb5a.r2.cloudflarestorage.com/katiesharedassetsite/';
+                const R2_BASE_URL = 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/';
             </script>
 
             <!-- Visible 4-Column Grid (Initial View) -->
@@ -230,28 +227,28 @@
                 <!-- Asset Card 1: Loading State -->
                 <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                     onclick="showAssetModal('Loading State', R2_BASE_URL + 'loading-state.gif', 'https://mock-asset-link/loading_state.json')">
-                    <img src="https://placehold.co/200x120/F38020/ffffff?text=Loading+State" class="w-full h-24 object-cover rounded-md mb-2" alt="Loading animation example gif">
+                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/loading-state.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Loading animation example gif">
                     <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Loading State</p>
                 </div>
 
                 <!-- Asset Card 2: Button Hover -->
                 <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                     onclick="showAssetModal('Button Hover', R2_BASE_URL + 'button-hover.gif', 'https://mock-asset-link/button_hover.aep')">
-                    <img src="https://placehold.co/200x120/F38020/ffffff?text=Button+Hover" class="w-full h-24 object-cover rounded-md mb-2" alt="Button hover effect example gif">
+                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/button-hover.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Button hover effect example gif">
                     <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Button Hover</p>
                 </div>
 
                 <!-- Asset Card 3: Header Drop -->
                 <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                     onclick="showAssetModal('Header Drop', R2_BASE_URL + 'header-drop.gif', 'https://mock-asset-link/header_drop.aep')">
-                    <img src="https://placehold.co/200x120/F38020/ffffff?text=Header+Drop" class="w-full h-24 object-cover rounded-md mb-2" alt="Header drop animation example gif">
+                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/header-drop.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Header drop animation example gif">
                     <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Header Drop</p>
                 </div>
 
                 <!-- Asset Card 4: Success Icon -->
                 <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                     onclick="showAssetModal('Success Icon', R2_BASE_URL + 'success-icon.gif', 'https://mock-asset-link/success_icon.aep')">
-                    <img src="https://placehold.co/200x120/F38020/ffffff?text=Success+Icon" class="w-full h-24 object-cover rounded-md mb-2" alt="Success icon animation example gif">
+                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/success-icon.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Success icon animation example gif">
                     <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Success Icon</p>
                 </div>
             </div>
@@ -270,25 +267,25 @@
                     <!-- Card 5: Error Shake -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Error Shake', R2_BASE_URL + 'error-shake.gif', 'https://mock-asset-link/error_shake.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Error+Shake" class="w-full h-24 object-cover rounded-md mb-2" alt="Error shake animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/error-shake.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Error shake animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Error Shake</p>
                     </div>
                     <!-- Card 6: Toggle Flip -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Toggle Flip', R2_BASE_URL + 'toggle-flip.gif', 'https://mock-asset-link/toggle_flip.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Toggle+Flip" class="w-full h-24 object-cover rounded-md mb-2" alt="Toggle switch animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/toggle-flip.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Toggle switch animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Toggle Flip</p>
                     </div>
                     <!-- Card 7: Progress Bar -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Progress Bar', R2_BASE_URL + 'progress-bar.gif', 'https://mock-asset-link/progress_bar.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Progress+Bar" class="w-full h-24 object-cover rounded-md mb-2" alt="Progress bar animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/progress-bar.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Progress bar animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Progress Bar</p>
                     </div>
                     <!-- Card 8: CF Warp -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('CF Warp', R2_BASE_URL + 'cf-warp.gif', 'https://mock-asset-link/cf_warp.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=CF+Warp" class="w-full h-24 object-cover rounded-md mb-2" alt="Cloudflare warp animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/cf-warp.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Cloudflare warp animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">CF Warp</p>
                     </div>
 
@@ -296,25 +293,25 @@
                     <!-- Card 9: Icon Fade -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Icon Fade', R2_BASE_URL + 'icon-fade.gif', 'https://mock-asset-link/icon_fade.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Icon+Fade" class="w-full h-24 object-cover rounded-md mb-2" alt="Icon fade animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/icon-fade.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Icon fade animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Icon Fade</p>
                     </div>
                     <!-- Card 10: Pulse Effect -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Pulse Effect', R2_BASE_URL + 'pulse-effect.gif', 'https://mock-asset-link/pulse.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Pulse+Effect" class="w-full h-24 object-cover rounded-md mb-2" alt="Pulse effect animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/pulse-effect.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Pulse effect animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Pulse Effect</p>
                     </div>
                     <!-- Card 11: Checkmark -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Checkmark', R2_BASE_URL + 'checkmark.gif', 'https://mock-asset-link/checkmark.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Checkmark" class="w-full h-24 object-cover rounded-md mb-2" alt="Checkmark reveal animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/checkmark.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Checkmark reveal animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Checkmark</p>
                     </div>
                     <!-- Card 12: Cloud Swoosh -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Cloud Swoosh', R2_BASE_URL + 'cloud-swoosh.gif', 'https://mock-asset-link/cloud_swoosh.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Cloud+Swoosh" class="w-full h-24 object-cover rounded-md mb-2" alt="Cloud swoosh animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/cloud-swoosh.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Cloud swoosh animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Cloud Swoosh</p>
                     </div>
 
@@ -322,25 +319,25 @@
                     <!-- Card 13: Text Reveal -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Text Reveal', R2_BASE_URL + 'text-reveal.gif', 'https://mock-asset-link/text_reveal.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Text+Reveal" class="w-full h-24 object-cover rounded-md mb-2" alt="Text reveal animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/text-reveal.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Text reveal animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Text Reveal</p>
                     </div>
                     <!-- Card 14: Map Pin -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Map Pin', R2_BASE_URL + 'map-pin.gif', 'https://mock-asset-link/map_pin.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Map+Pin" class="w-full h-24 object-cover rounded-md mb-2" alt="Map pin drop animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/map-pin.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Map pin drop animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Map Pin</p>
                     </div>
                     <!-- Card 15: Server Wiggle -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Server Wiggle', R2_BASE_URL + 'server-wiggle.gif', 'https://mock-asset-link/server_wiggle.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Server+Wiggle" class="w-full h-24 object-cover rounded-md mb-2" alt="Server wiggle animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/server-wiggle.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Server wiggle animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Server Wiggle</p>
                     </div>
                     <!-- Card 16: Data Flow -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Data Flow', R2_BASE_URL + 'data-flow.gif', 'https://mock-asset-link/data_flow.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Data+Flow" class="w-full h-24 object-cover rounded-md mb-2" alt="Data flow animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/data-flow.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Data flow animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Data Flow</p>
                     </div>
 
@@ -348,25 +345,25 @@
                     <!-- Card 17: Alert Bounce -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Alert Bounce', R2_BASE_URL + 'alert-bounce.gif', 'https://mock-asset-link/alert_bounce.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Alert+Bounce" class="w-full h-24 object-cover rounded-md mb-2" alt="Alert bounce animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/alert-bounce.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Alert bounce animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Alert Bounce</p>
                     </div>
                     <!-- Card 18: Key Rotate -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Key Rotate', R2_BASE_URL + 'key-rotate.gif', 'https://mock-asset-link/key_rotate.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Key+Rotate" class="w-full h-24 object-cover rounded-md mb-2" alt="Key rotate animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/key-rotate.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Key rotate animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Key Rotate</p>
                     </div>
                     <!-- Card 19: Lock Toggle -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Lock Toggle', R2_BASE_URL + 'lock-toggle.gif', 'https://mock-asset-link/lock_toggle.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Lock+Toggle" class="w-full h-24 object-cover rounded-md mb-2" alt="Lock toggle animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/lock-toggle.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Lock toggle animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Lock Toggle</p>
                     </div>
                     <!-- Card 20: Bar Chart -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Bar Chart', R2_BASE_URL + 'bar-chart.gif', 'https://mock-asset-link/bar_chart.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Bar+Chart" class="w-full h-24 object-cover rounded-md mb-2" alt="Bar chart animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/bar-chart.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Bar chart animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Bar Chart</p>
                     </div>
                     
@@ -374,36 +371,28 @@
                     <!-- Card 21: Pie Chart -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Pie Chart', R2_BASE_URL + 'pie-chart.gif', 'https://mock-asset-link/pie_chart.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Pie+Chart" class="w-full h-24 object-cover rounded-md mb-2" alt="Pie chart animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/pie-chart.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Pie chart animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Pie Chart</p>
                     </div>
                     <!-- Card 22: Settings Spin -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Settings Spin', R2_BASE_URL + 'settings-spin.gif', 'https://mock-asset-link/settings_spin.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Settings+Spin" class="w-full h-24 object-cover rounded-md mb-2" alt="Settings spin animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/settings-spin.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Settings spin animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Settings Spin</p>
                     </div>
                     <!-- Card 23: Warning Flash -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Warning Flash', R2_BASE_URL + 'warning-flash.gif', 'https://mock-asset-link/warning_flash.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Warning+Flash" class="w-full h-24 object-cover rounded-md mb-2" alt="Warning flash animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/warning-flash.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Warning flash animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Warning Flash</p>
                     </div>
                     <!-- Card 24: Shield Appear -->
                     <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
                         onclick="showAssetModal('Shield Appear', R2_BASE_URL + 'shield-appear.gif', 'https://mock-asset-link/shield_appear.aep')">
-                        <img src="https://placehold.co/200x120/F38020/ffffff?text=Shield+Appear" class="w-full h-24 object-cover rounded-md mb-2" alt="Shield appear animation example gif">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/shield-appear.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Shield appear animation example gif">
                         <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Shield Appear</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Toggle Button -->
-            <div class="mt-8 text-center">
-                <button id="toggle-button-bottom" onclick="toggleAssets()" class="inline-flex items-center px-6 py-3 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:bg-opacity-90 transition duration-300">
-                    <span id="toggle-text-bottom">Show 20 More Assets</span>
-                    <svg id="toggle-icon-bottom" class="w-4 h-4 ml-2 transition-transform duration-300 transform rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-                </button>
             </div>
 
             <!-- Guidance Link (Always visible) -->
@@ -477,26 +466,31 @@
 
                 <!-- Asset Card 7: Grammer & Word Choice (THIRD POSITION) -->
                 <div class="bg-cf-light p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">Grammar & Word Choices</h3>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">Grammer & Word Choices</h3>
                     <ul class="text-gray-600 space-y-2 text-sm">
                         <li>
                             <a href="#" class="text-cf-orange font-medium hover:underline flex items-center">
-                                Content Style Guide (v3.1) &rarr;
+                                Components Library (Figma) &rarr;
                             </a>
                         </li>
                         <li>
                             <a href="#" class="text-cf-orange font-medium hover:underline flex items-center">
-                                Global Terminology List &rarr;
+                                Color Tokens Reference &rarr;
                             </a>
                         </li>
                         <li>
                             <a href="#" class="text-cf-orange font-medium hover:underline flex items-center">
-                                Product-Specific Glossary &rarr;
+                                Typography Styles &rarr;
                             </a>
                         </li>
                         <li>
                             <a href="#" class="text-cf-orange font-medium hover:underline flex items-center">
-                                Accessibility Guidelines &rarr;
+                                Interaction Patterns Guide &rarr;
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-cf-orange font-medium hover:underline flex items-center">
+                                Desktop Layout Templates &rarr;
                             </a>
                         </li>
                     </ul>
@@ -590,7 +584,7 @@
             <div class="mb-4">
                 <img id="asset-modal-image" src="" class="w-full h-auto object-cover rounded-lg mb-4 shadow-md" alt="Asset Preview">
                 
-                <p class="text-gray-600 mb-2 text-sm font-semibold">Asset URL (Mock Link):</p>
+                <p class="text-gray-600 mb-2 text-sm font-semibold">Asset URL:</p>
                 <textarea id="asset-modal-url-display" readonly 
                           class="w-full p-2 border border-gray-300 rounded-lg text-gray-700 font-mono text-xs resize-none focus:outline-none focus:ring-2 focus:ring-cf-orange bg-gray-50 h-10 overflow-hidden"
                           rows="1" placeholder="URL will appear here.">
@@ -625,15 +619,15 @@
 
         // Constants for Firebase Configuration
         // Accessing globals via window object to prevent potential SyntaxErrors inside module scope
-        const appId = typeof window.__app_id !== 'undefined' ? window.__app_id : 'default-app-id';
+        const appId = window.__app_id || 'default-app-id';
         let firebaseConfig = {};
         try {
-            const configString = typeof window.__firebase_config !== 'undefined' ? window.__firebase_config : '{}';
+            const configString = window.__firebase_config || '{}';
             firebaseConfig = JSON.parse(configString);
         } catch (e) {
             console.error("Error parsing __firebase_config:", e);
         }
-        const initialAuthToken = typeof window.__initial_auth_token !== 'undefined' ? window.__initial_auth_token : null;
+        const initialAuthToken = window.__initial_auth_token || null;
 
         const METRICS_DOC_PATH = `artifacts/${appId}/public/data/metrics/analytics`;
 
@@ -641,7 +635,7 @@
         async function initializeFirebase() {
             setLogLevel('Debug');
             if (Object.keys(firebaseConfig).length === 0) {
-                console.warn("Firebase configuration is empty. Metrics will not function and will display 0.");
+                console.error("Firebase configuration is empty. Metrics will not function.");
                 return;
             }
 
@@ -650,7 +644,6 @@
                 auth = getAuth(app);
                 db = getFirestore(app);
 
-                // Sign in with token or anonymously
                 if (initialAuthToken) {
                     await signInWithCustomToken(auth, initialAuthToken);
                 } else {
@@ -682,48 +675,32 @@
             return doc(db, METRICS_DOC_PATH);
         }
 
-        async function attemptIncrement(field, retries = 3, delay = 1000) {
+        async function incrementCounter(field) {
             const docRef = getAnalyticsDocRef();
             if (!docRef || !isFirebaseReady) {
                 console.error("Firestore not ready or auth pending for increment.");
                 return;
             }
 
-            for (let i = 0; i < retries; i++) {
-                try {
-                    // Check if the document exists first (or get initial state)
-                    const docSnap = await getDoc(docRef);
-                    if (!docSnap.exists()) {
-                        // Initialize the document with default values
-                        await setDoc(docRef, {
-                            page_views: 0,
-                            prompts_copied: 0,
-                            videos_copied: 0
-                        });
-                        // Since we initialize it, we can continue to the update
-                    }
-                    
-                    // Perform the increment
-                    await updateDoc(docRef, { [field]: increment(1) });
-                    console.log(`Successfully incremented ${field}`);
-                    return; // Success, exit the loop
-                } catch (error) {
-                    if (i === retries - 1) {
-                        console.error(`Failed to increment ${field} after ${retries} attempts:`, error);
-                        // Show user-facing error indication in metrics section if needed
-                    } else {
-                        // Exponential backoff
-                        await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i)));
-                    }
+            try {
+                // Check if the document exists first
+                const docSnap = await getDoc(docRef);
+                if (!docSnap.exists()) {
+                    // Initialize the document with default values
+                    await setDoc(docRef, {
+                        page_views: 0,
+                        prompts_copied: 0,
+                        videos_copied: 0
+                    });
                 }
+                
+                // Perform the increment
+                await updateDoc(docRef, { [field]: increment(1) });
+                console.log(`Successfully incremented ${field}`);
+            } catch (error) {
+                console.error(`Error incrementing ${field}:`, error);
             }
         }
-        
-        // Wrapper function to start increment with backoff
-        function incrementCounter(field) {
-            attemptIncrement(field);
-        }
-
 
         function setupMetricsTracking() {
             const docRef = getAnalyticsDocRef();
@@ -737,26 +714,20 @@
 
             // 2. Set up Real-time listener for all three metrics
             onSnapshot(docRef, (doc) => {
-                const metricPageViews = document.getElementById('metric-page-views');
-                const metricPromptsCopied = document.getElementById('metric-prompts-copied');
-                const metricVideosCopied = document.getElementById('metric-videos-copied');
-
                 if (doc.exists()) {
                     const data = doc.data();
-                    metricPageViews.textContent = data.page_views || 0;
-                    metricPromptsCopied.textContent = data.prompts_copied || 0;
-                    metricVideosCopied.textContent = data.videos_copied || 0;
+                    document.getElementById('metric-page-views').textContent = data.page_views || 0;
+                    document.getElementById('metric-prompts-copied').textContent = data.prompts_copied || 0;
+                    document.getElementById('metric-videos-copied').textContent = data.videos_copied || 0;
                 } else {
                     // Document doesn't exist yet, display 0s
-                    metricPageViews.textContent = '0';
-                    metricPromptsCopied.textContent = '0';
-                    metricVideosCopied.textContent = '0';
+                    document.getElementById('metric-page-views').textContent = '0';
+                    document.getElementById('metric-prompts-copied').textContent = '0';
+                    document.getElementById('metric-videos-copied').textContent = '0';
                 }
             }, (error) => {
                 console.error("Error listening to metrics:", error);
-                document.getElementById('metric-page-views').textContent = 'ERR';
-                document.getElementById('metric-prompts-copied').textContent = 'ERR';
-                document.getElementById('metric-videos-copied').textContent = 'ERR';
+                document.getElementById('metric-page-views').textContent = 'ERROR';
             });
         }
 
@@ -779,7 +750,6 @@
             button.innerHTML = '<i class="fas fa-copy mr-2"></i>Copy Prompt';
             button.classList.remove('bg-green-600');
             button.classList.add('bg-cf-orange');
-            button.disabled = false;
         }
 
         // Function to copy the prompt modal content and track metric
@@ -789,13 +759,7 @@
             textarea.select();
             textarea.setSelectionRange(0, 99999); 
 
-            try {
-                // Use document.execCommand('copy') as navigator.clipboard may fail in iframe environments
-                document.execCommand('copy');
-            } catch (err) {
-                console.error('Copy failed:', err);
-                // Simple visual error state if needed
-            }
+            document.execCommand('copy');
             
             // Increment the prompt copy counter
             incrementCounter('prompts_copied'); 
@@ -819,8 +783,7 @@
         // --- ASSET MODAL FUNCTIONS ---
         window.showAssetModal = function(title, imageUrl, assetUrl) {
             document.getElementById('asset-modal-title').textContent = title;
-            // NOTE: Replacing original R2 URL with a placeholder as R2 link won't load here.
-            document.getElementById('asset-modal-image').src = `https://placehold.co/400x200/F38020/ffffff?text=Preview%20of%20${encodeURIComponent(title)}`;
+            document.getElementById('asset-modal-image').src = imageUrl;
             document.getElementById('asset-modal-url-display').value = assetUrl;
             document.getElementById('asset-modal').classList.remove('hidden');
             document.body.classList.add('overflow-hidden');
@@ -844,11 +807,7 @@
             textarea.select();
             textarea.setSelectionRange(0, 99999);
 
-            try {
-                document.execCommand('copy');
-            } catch (err) {
-                console.error('Copy failed:', err);
-            }
+            document.execCommand('copy');
             
             // Increment the video copy counter
             incrementCounter('videos_copied'); 
@@ -862,7 +821,7 @@
 
             setTimeout(() => {
                 button.innerHTML = originalHTML;
-                button.classList.remove('bg-cf-orange');
+                button.classList.remove('bg-green-600');
                 button.classList.add('bg-cf-orange');
                 button.disabled = false;
             }, 1500);
@@ -871,24 +830,18 @@
         // --- TOGGLE FUNCTION ---
         window.toggleAssets = function() {
             const extraAssetsGrid = document.getElementById('extra-assets-grid');
-            const toggleTextTop = document.getElementById('toggle-text');
-            const toggleIconTop = document.getElementById('toggle-icon');
-            const toggleTextBottom = document.getElementById('toggle-text-bottom');
-            const toggleIconBottom = document.getElementById('toggle-icon-bottom');
-
+            const toggleButton = document.getElementById('toggle-button');
+            const toggleText = document.getElementById('toggle-text');
+            const toggleIcon = document.getElementById('toggle-icon');
 
             if (extraAssetsGrid.classList.contains('hidden')) {
                 extraAssetsGrid.classList.remove('hidden');
-                toggleTextTop.textContent = 'Show Fewer Assets';
-                toggleTextBottom.textContent = 'Show Fewer Assets';
-                toggleIconTop.classList.add('rotate-180');
-                toggleIconBottom.classList.add('rotate-180');
+                toggleText.textContent = 'Show Fewer Assets';
+                toggleIcon.classList.add('rotate-180');
             } else {
                 extraAssetsGrid.classList.add('hidden');
-                toggleTextTop.textContent = 'Show 20 More Assets';
-                toggleTextBottom.textContent = 'Show 20 More Assets';
-                toggleIconTop.classList.remove('rotate-180');
-                toggleIconBottom.classList.remove('rotate-180');
+                toggleText.textContent = 'Show 20 More Assets';
+                toggleIcon.classList.remove('rotate-180');
             }
         }
         
@@ -905,3 +858,4 @@
 
 </body>
 </html>
+
