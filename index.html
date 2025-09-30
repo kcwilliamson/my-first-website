@@ -233,40 +233,41 @@
             <p class="text-gray-500 dark:text-gray-400 mb-12 border-b-2 border-gray-200 dark:border-gray-700 pb-3">Click any asset card to view the GIF preview and quickly copy the direct asset URL link from the modal.</p>
 
             <!-- Base URL for R2 assets -->
-            <!-- Note: Assumes GIFs are named lowercase, hyphenated, e.g., 'loading-state.gif' -->
+            <!-- Note: Assumes GIFs are named lowercase, hyphenated, e.g., 'attacker-laptop.gif' -->
 
             <script>
-                const R2_BASE_URL = 'https://2f3dc21d188ba781322b520bbde5fb5a.r2.cloudflarestorage.com/katiesharedassetsite';
+                // Corrected R2 base URL to use the public endpoint and include the file path folder
+                const R2_BASE_URL = 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/';
             </script>
 
             <!-- Visible 4-Column Grid (Initial View) -->
             <div id="initial-assets-grid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
                 <!-- Asset Card 1: Attacker Laptop -->
-                <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
-                    onclick="showAssetModal('Attacker Laptop', R2_BASE_URL + 'PCXV Gifs/Attacker laptop.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Attacker%20laptop.gif')">
-                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Attacker%20laptop.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Loading animation example gif">
-                    <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Attacker Laptop</p>
+                <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
+                    onclick="showAssetModal('Attacker Laptop', R2_BASE_URL + 'Attacker%20laptop.gif', R2_BASE_URL + 'Attacker%20laptop.gif')">
+                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Attacker%20laptop.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Attacker laptop animation gif">
+                    <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Attacker Laptop</p>
                 </div>
 
                 <!-- Asset Card 2: Bidirectional Arrow -->
-                <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
-                    onclick="showAssetModal('Bidirectional Arrow', R2_BASE_URL + 'PCXV Gifs/Bidirectional arrow.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Bidirectional%20arrow.gif')">
-                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Bidirectional%20arrow.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Button hover effect example gif">
-                    <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Button Hover</p>
+                <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
+                    onclick="showAssetModal('Bidirectional Arrow', R2_BASE_URL + 'Bidirectional%20arrow.gif', R2_BASE_URL + 'Bidirectional%20arrow.gif')">
+                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Bidirectional%20arrow.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Bidirectional arrow animation gif">
+                    <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Bidirectional Arrow</p>
                 </div>
 
                 <!-- Asset Card 3: CF Global Network -->
-                <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
-                    onclick="showAssetModal('CF Global Network', R2_BASE_URL + 'PCXV Gifs/CF Global Network.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/CF%20Global%20Network.gif')">
-                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/CF%20Global%20Network.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Header drop animation example gif">
-                    <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Header Drop</p>
+                <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
+                    onclick="showAssetModal('CF Global Network', R2_BASE_URL + 'CF%20Global%20Network.gif', R2_BASE_URL + 'CF%20Global%20Network.gif')">
+                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/CF%20Global%20Network.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="CF Global Network animation gif">
+                    <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">CF Global Network</p>
                 </div>
 
                 <!-- Asset Card 4: Copy Button -->
-                <div class="bg-white p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col cursor-pointer"
-                    onclick="showAssetModal('Copy Button', R2_BASE_URL + 'PCXV Gifs/Copy button.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Copy%20button.gif')">
-                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Copy%20button.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Success icon animation example gif">
-                    <p class="text-xs font-semibold text-gray-700 mb-1 truncate">Success Icon</p>
+                <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
+                    onclick="showAssetModal('Copy Button', R2_BASE_URL + 'Copy%20button.gif', R2_BASE_URL + 'Copy%20button.gif')">
+                    <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Copy%20button.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Copy button animation gif">
+                    <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Copy Button</p>
                 </div>
             </div>
 
@@ -283,130 +284,130 @@
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <!-- Card 5: Let's Go Button -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Lets Go Button', R2_BASE_URL + 'PCXV Gifs/Lets go button.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Lets%20go%20button.gif')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Lets%20go%20button.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Error shake animation example gif">
+                        onclick="showAssetModal('Lets Go Button', R2_BASE_URL + 'Lets%20go%20button.gif', R2_BASE_URL + 'Lets%20go%20button.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Lets%20go%20button.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Lets go button animation gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Lets Go Button</p>
                     </div>
                     <!-- Card 6: Product Icon Display -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Product icon display', R2_BASE_URL + 'PCXV Gifs/Product icon display.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Product%20icon%20display.gif')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Product%20icon%20display.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Toggle switch animation example gif">
+                        onclick="showAssetModal('Product icon display', R2_BASE_URL + 'Product%20icon%20display.gif', R2_BASE_URL + 'Product%20icon%20display.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Product%20icon%20display.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Product icon display animation gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Product Icon Display</p>
                     </div>
                     <!-- Card 7: Search Bar -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Search Bar', R2_BASE_URL + 'PCXV Gifs/Search bar.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Search%20bar.gif')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Search%20bar.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Progress bar animation example gif">
+                        onclick="showAssetModal('Search Bar', R2_BASE_URL + 'Search%20bar.gif', R2_BASE_URL + 'Search%20bar.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Search%20bar.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Search bar animation gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Search Bar</p>
                     </div>
                     <!-- Card 8: Server transition -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('CF Warp', R2_BASE_URL + 'PCXV Gifs/Server transition.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Server%20transition.gif')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Server%20transition.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Cloudflare warp animation example gif">
+                        onclick="showAssetModal('Server Transition', R2_BASE_URL + 'Server%20transition.gif', R2_BASE_URL + 'Server%20transition.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/Server%20transition.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Server transition animation gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Server Transition</p>
                     </div>
 
                     <!-- Row 2 -->
                     <!-- Card 9: Laptop 1 -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Pulse Effect', R2_BASE_URL + 'PCXV Gifs/User laptop 1.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%201.gif')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%201.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Pulse effect animation example gif">
+                        onclick="showAssetModal('Laptop 1', R2_BASE_URL + 'User%20laptop%201.gif', R2_BASE_URL + 'User%20laptop%201.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%201.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Laptop 1 animation gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Laptop 1</p>
                     </div>
                     <!-- Card 10: Laptop 2 -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Pulse Effect', R2_BASE_URL + 'PCXV Gifs/User laptop 2.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%202.gif')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%202.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Pulse effect animation example gif">
+                        onclick="showAssetModal('Laptop 2', R2_BASE_URL + 'User%20laptop%202.gif', R2_BASE_URL + 'User%20laptop%202.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%202.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Laptop 2 animation gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Laptop 2</p>
                     </div>
                     <!-- Card 11: Laptop 3 -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Checkmark', R2_BASE_URL + 'PCXV Gifs/User laptop 3.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%203.gifp')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%203.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Checkmark reveal animation example gif">
+                        onclick="showAssetModal('Laptop 3', R2_BASE_URL + 'User%20laptop%203.gif', R2_BASE_URL + 'User%20laptop%203.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/User%20laptop%203.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Laptop 3 animation gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Laptop 3</p>
                     </div>
                     <!-- Card 12: World Spin Lines -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Cloud Swoosh', R2_BASE_URL + 'PCXV Gifs/World spin lines.gif', 'https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/World%20spin%20lines.gif')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/World%20spin%20lines.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Cloud swoosh animation example gif">
-                        <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">World Spint Lines</p>
+                        onclick="showAssetModal('World Spin Lines', R2_BASE_URL + 'World%20spin%20lines.gif', R2_BASE_URL + 'World%20spin%20lines.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/World%20spin%20lines.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="World spin lines animation gif">
+                        <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">World Spin Lines</p>
                     </div>
 
-                    <!-- Row 3 -->
+                    <!-- Row 3 (Placeholder assets using the new R2 path) -->
                     <!-- Card 13: Text Reveal -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Text Reveal', R2_BASE_URL + 'text-reveal.gif', 'https://mock-asset-link/text_reveal.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/text-reveal.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Text reveal animation example gif">
+                        onclick="showAssetModal('Text Reveal', R2_BASE_URL + 'text-reveal.gif', R2_BASE_URL + 'text-reveal.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/text-reveal.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Text reveal animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Text Reveal</p>
                     </div>
                     <!-- Card 14: Map Pin -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Map Pin', R2_BASE_URL + 'map-pin.gif', 'https://mock-asset-link/map_pin.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/map-pin.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Map pin drop animation example gif">
+                        onclick="showAssetModal('Map Pin', R2_BASE_URL + 'map-pin.gif', R2_BASE_URL + 'map-pin.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/map-pin.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Map pin drop animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Map Pin</p>
                     </div>
                     <!-- Card 15: Server Wiggle -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Server Wiggle', R2_BASE_URL + 'server-wiggle.gif', 'https://mock-asset-link/server_wiggle.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/server-wiggle.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Server wiggle animation example gif">
+                        onclick="showAssetModal('Server Wiggle', R2_BASE_URL + 'server-wiggle.gif', R2_BASE_URL + 'server-wiggle.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/server-wiggle.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Server wiggle animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Server Wiggle</p>
                     </div>
                     <!-- Card 16: Data Flow -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Data Flow', R2_BASE_URL + 'data-flow.gif', 'https://mock-asset-link/data_flow.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/data-flow.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Data flow animation example gif">
+                        onclick="showAssetModal('Data Flow', R2_BASE_URL + 'data-flow.gif', R2_BASE_URL + 'data-flow.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/data-flow.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Data flow animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Data Flow</p>
                     </div>
 
                     <!-- Row 4 -->
                     <!-- Card 17: Alert Bounce -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Alert Bounce', R2_BASE_URL + 'alert-bounce.gif', 'https://mock-asset-link/alert_bounce.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/alert-bounce.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Alert bounce animation example gif">
+                        onclick="showAssetModal('Alert Bounce', R2_BASE_URL + 'alert-bounce.gif', R2_BASE_URL + 'alert-bounce.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/alert-bounce.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Alert bounce animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Alert Bounce</p>
                     </div>
                     <!-- Card 18: Key Rotate -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Key Rotate', R2_BASE_URL + 'key-rotate.gif', 'https://mock-asset-link/key_rotate.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/key-rotate.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Key rotate animation example gif">
+                        onclick="showAssetModal('Key Rotate', R2_BASE_URL + 'key-rotate.gif', R2_BASE_URL + 'key-rotate.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/key-rotate.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Key rotate animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Key Rotate</p>
                     </div>
                     <!-- Card 19: Lock Toggle -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Lock Toggle', R2_BASE_URL + 'lock-toggle.gif', 'https://mock-asset-link/lock_toggle.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/lock-toggle.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Lock toggle animation example gif">
+                        onclick="showAssetModal('Lock Toggle', R2_BASE_URL + 'lock-toggle.gif', R2_BASE_URL + 'lock-toggle.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/lock-toggle.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Lock toggle animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Lock Toggle</p>
                     </div>
                     <!-- Card 20: Bar Chart -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Bar Chart', R2_BASE_URL + 'bar-chart.gif', 'https://mock-asset-link/bar_chart.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/bar-chart.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Bar chart animation example gif">
+                        onclick="showAssetModal('Bar Chart', R2_BASE_URL + 'bar-chart.gif', R2_BASE_URL + 'bar-chart.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/bar-chart.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Bar chart animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Bar Chart</p>
                     </div>
                     
                     <!-- Row 5 -->
                     <!-- Card 21: Pie Chart -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Pie Chart', R2_BASE_URL + 'pie-chart.gif', 'https://mock-asset-link/pie_chart.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/pie-chart.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Pie chart animation example gif">
+                        onclick="showAssetModal('Pie Chart', R2_BASE_URL + 'pie-chart.gif', R2_BASE_URL + 'pie-chart.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/pie-chart.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Pie chart animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Pie Chart</p>
                     </div>
                     <!-- Card 22: Settings Spin -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Settings Spin', R2_BASE_URL + 'settings-spin.gif', 'https://mock-asset-link/settings_spin.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/settings-spin.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Settings spin animation example gif">
+                        onclick="showAssetModal('Settings Spin', R2_BASE_URL + 'settings-spin.gif', R2_BASE_URL + 'settings-spin.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/settings-spin.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Settings spin animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Settings Spin</p>
                     </div>
                     <!-- Card 23: Warning Flash -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Warning Flash', R2_BASE_URL + 'warning-flash.gif', 'https://mock-asset-link/warning_flash.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/warning-flash.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Warning flash animation example gif">
+                        onclick="showAssetModal('Warning Flash', R2_BASE_URL + 'warning-flash.gif', R2_BASE_URL + 'warning-flash.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/warning-flash.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Warning flash animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Warning Flash</p>
                     </div>
                     <!-- Card 24: Shield Appear -->
                     <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer"
-                        onclick="showAssetModal('Shield Appear', R2_BASE_URL + 'shield-appear.gif', 'https://mock-asset-link/shield_appear.aep')">
-                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/shield-appear.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Shield appear animation example gif">
+                        onclick="showAssetModal('Shield Appear', R2_BASE_URL + 'shield-appear.gif', R2_BASE_URL + 'shield-appear.gif')">
+                        <img src="https://pub-aa908c10829e4ed6b353da031aeb7c2b.r2.dev/PCXV%20Gifs/shield-appear.gif" class="w-full h-24 object-cover rounded-md mb-2" alt="Shield appear animation example gif">
                         <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1 truncate">Shield Appear</p>
                     </div>
                 </div>
@@ -599,7 +600,7 @@
 
             <!-- Asset Display and Copyable Link -->
             <div class="mb-4">
-                <img id="asset-modal-image" src="https://2f3dc21d188ba781322b520bbde5fb5a.r2.cloudflarestorage.com/katiesharedassetsite" class="w-full h-auto object-cover rounded-lg mb-4 shadow-md" alt="Asset Preview">
+                <img id="asset-modal-image" src="" class="w-full h-auto object-cover rounded-lg mb-4 shadow-md" alt="Asset Preview">
                 
                 <p class="text-gray-600 dark:text-gray-300 mb-2 text-sm font-semibold">Asset URL:</p>
                 <textarea id="asset-modal-url-display" readonly 
@@ -831,6 +832,7 @@
         }
         
         // --- ASSET MODAL FUNCTIONS ---
+        // The imageUrl parameter is used for the image src and the assetUrl parameter for the copyable textarea value.
         window.showAssetModal = function(title, imageUrl, assetUrl) {
             document.getElementById('asset-modal-title').textContent = title;
             document.getElementById('asset-modal-image').src = imageUrl;
@@ -908,3 +910,4 @@
 
 </body>
 </html>
+
