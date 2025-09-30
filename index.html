@@ -49,43 +49,56 @@
             background: linear-gradient(135deg, #FF6633 0%, #F6821F 50%, #FBAD41 100%);
         }
     </style>
-    <!-- Tailwind Configuration for Cloudflare colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'cf-orange': '#F38020', // Primary Cloudflare-like orange
-                        'cf-light': '#FFF8F4',  // Very light off-white/orange tint
-                    }
+    <!-- Tailwind Configuration for Cloudflare colors and Dark Mode -->
+<script>
+    tailwind.config = {
+        darkMode: 'class', // <--- This line enables class-based dark mode
+        theme: {
+            extend: {
+                colors: {
+                    'cf-orange': '#F38020', // Primary Cloudflare-like orange
+                    'cf-light': '#FFF8F4',  // Very light off-white/orange tint
                 }
             }
         }
-    </script>
+    }
+</script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
+<!-- Initial script to apply dark class on load based on user preference -->
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+</script>
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Title -->
                 <div class="flex-shrink-0">
                     <span class="text-2xl font-extrabold text-cf-orange tracking-tight">PCX Content Strategy</span>
-                    <span class="text-gray-500 text-sm font-medium ml-2 hidden sm:inline">Shared Assets</span>
+                    <span class="text-gray-500 dark:text-gray-400 text-sm font-medium ml-2 hidden sm:inline">Shared Assets</span>
                 </div>
-                <!-- Navigation Links -->
-                <nav class="hidden md:flex space-x-4">
-                    <a href="#content" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium">Prompts</a>
-                    <a href="#video" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium">Video </a>
-                    <a href="#design" class="text-gray-600 hover:text-cf-orange transition duration-150 font-medium">Guides</a>
+                <!-- Navigation Links and Dark Mode Toggle -->
+                <nav class="flex items-center space-x-4">
+                    <a href="#content" class="text-gray-600 dark:text-gray-300 hover:text-cf-orange transition duration-150 font-medium">Prompts</a>
+                    <a href="#video" class="text-gray-600 dark:text-gray-300 hover:text-cf-orange transition duration-150 font-medium">Video </a>
+                    <a href="#design" class="text-gray-600 dark:text-gray-300 hover:text-cf-orange transition duration-150 font-medium">Guides</a>
+
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="dark-mode-toggle" onclick="toggleDarkMode()" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150">
+                        <i id="theme-icon" class="fas fa-sun w-5 h-5"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button (placeholder) -->
+                    <button class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150">
+                        <svg class="h-6 w-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
                 </nav>
-                <!-- Mobile Menu Button (placeholder) -->
-                <button class="md:hidden p-2 rounded-md hover:bg-gray-100 transition duration-150">
-                    <svg class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
