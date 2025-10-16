@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shared PCX Assets</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons (Copy, Sun, Moon, Times) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font --><link href="https://fonts.googleapis.com/css2?family=Inter:wght=100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons (Flipping and Categorization) --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -33,7 +30,7 @@
         }
         /* Card Flip Transition (for the prompt cards) */
         .prompt-card {
-            min-height: 180px; /* Ensure cards have consistent height for flipping */
+            min-height: 250px; /* Increased height to prevent text overflow */
             cursor: pointer;
             perspective: 1000px;
         }
@@ -67,8 +64,7 @@
             background: linear-gradient(135deg, #FF6633 0%, #F6821F 50%, #FBAD41 100%);
         }
     </style>
-    <!-- Tailwind Configuration for Cloudflare colors and Dark Mode -->
-    <script>
+    <!-- Tailwind Configuration for Cloudflare colors and Dark Mode --><script>
         tailwind.config = {
             darkMode: 'class', // Enable dark mode based on 'dark' class on HTML tag
             theme: {
@@ -82,8 +78,7 @@
         }
     </script>
 </head>
-<!-- Initial script to apply dark class on load based on user preference -->
-<script>
+<!-- Initial script to apply dark class on load based on user preference --><script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
     } else {
@@ -93,28 +88,22 @@
 
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 lava-gradient shadow-lg">
+    <!-- Header & Navigation --><header class="sticky top-0 z-50 lava-gradient shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo/Title -->
-                <div class="flex-shrink-0">
+                <!-- Logo/Title --><div class="flex-shrink-0">
                     <span class="text-2xl font-extrabold text-white tracking-tight">PCX Content Strategy</span>
                     <span class="text-gray-200 text-sm font-medium ml-2 hidden sm:inline">Shared Assets</span>
                 </div>
-                <!-- Navigation Links and Dark Mode Toggle -->
-                <nav class="flex items-center space-x-4">
+                <!-- Navigation Links and Dark Mode Toggle --><nav class="flex items-center space-x-4">
                     <a href="#content" class="text-white hover:text-gray-200 transition duration-150 font-medium">Prompts</a>
                     <a href="#design" class="text-white hover:text-gray-200 transition duration-150 font-medium">Guides</a>
 
-                    <!-- Dark Mode Toggle Button -->
-                    <button id="dark-mode-toggle" onclick="toggleDarkMode()" class="p-2 rounded-full text-white hover:bg-white hover:bg-opacity-20 transition duration-150">
-                        <!-- Icon updated by JS function `updateThemeIcon` -->
-                        <i id="theme-icon" class="fas fa-sun w-5 h-5"></i>
+                    <!-- Dark Mode Toggle Button --><button id="dark-mode-toggle" onclick="toggleDarkMode()" class="p-2 rounded-full text-white hover:bg-white hover:bg-opacity-20 transition duration-150">
+                        <!-- Icon updated by JS function `updateThemeIcon` --><i id="theme-icon" class="fas fa-sun w-5 h-5"></i>
                     </button>
                     
-                    <!-- Mobile Menu Button (placeholder) -->
-                    <button class="md:hidden p-2 rounded-md hover:bg-white hover:bg-opacity-20 transition duration-150">
+                    <!-- Mobile Menu Button (placeholder) --><button class="md:hidden p-2 rounded-md hover:bg-white hover:bg-opacity-20 transition duration-150">
                         <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
@@ -124,8 +113,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="lava-gradient section-padding text-white">
+    <!-- Hero Section --><section class="lava-gradient section-padding text-white">
         <div class="max-w-7xl mx-auto text-center">
             <h1 class="text-4xl sm:text-6xl font-extrabold mb-4">Sharing Knowledge, Scaling Excellence.</h1>
             <p class="text-xl sm:text-2xl font-light opacity-90 max-w-3xl mx-auto">
@@ -134,274 +122,240 @@
         </div>
     </section>
 
-    <!-- Main Content Sections Container -->
-    <main class="max-w-7xl mx-auto">
+    <!-- Main Content Sections Container --><main class="max-w-7xl mx-auto">
 
-        <!-- CONTENT Section (PCX AI Prompts) -->
-        <section id="content" class="section-padding bg-white dark:bg-gray-900 transition-colors duration-300">
+        <!-- CONTENT Section (PCX AI Prompts) --><section id="content" class="section-padding bg-white dark:bg-gray-900 transition-colors duration-300">
             <h2 class="text-3xl sm:text-4xl font-bold text-cf-orange mb-3 pb-1">PCX AI Prompts</h2>
-            <p class="text-gray-500 dark:text-gray-400 mb-12 border-b-2 border-gray-200 dark:border-gray-700 pb-3">Click any prompt card below to reveal the full, ready-to-copy text and instructions for using the Google Gem in Gemini.</p>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 border-b-2 border-gray-200 dark:border-gray-700 pb-3">Click any prompt card below to reveal the full, ready-to-copy text and instructions for using the Google Gem in Gemini.</p>
 
-            <!-- Row 1 (4 Prompts) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Data is stored in data-prompt attributes for use in the back face -->
+            <!-- Filter Pills/Tags --><div id="filter-container" class="flex flex-wrap gap-3 mb-12">
+                <button data-filter="all" onclick="filterPrompts('all', this)" class="filter-pill px-4 py-2 text-sm font-semibold rounded-full transition duration-150 bg-cf-orange text-white shadow-md hover:opacity-90 active-filter">
+                    All Prompts
+                </button>
+                <button data-filter="content-strategy" onclick="filterPrompts('content-strategy', this)" class="filter-pill px-4 py-2 text-sm font-semibold rounded-full transition duration-150 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">
+                    Content Strategy
+                </button>
+                <button data-filter="product-specific" onclick="filterPrompts('product-specific', this)" class="filter-pill px-4 py-2 text-sm font-semibold rounded-full transition duration-150 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">
+                    Product Specific
+                </button>
+                <button data-filter="ux-research" onclick="filterPrompts('ux-research', this)" class="filter-pill px-4 py-2 text-sm font-semibold rounded-full transition duration-150 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">
+                    UX Research
+                </button>
+            </div>
 
-                <!-- Asset Card 1: CF1 AI Decisions -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700" 
+            <!-- Prompt Card Grid (Single Container for clean flow) --><div id="prompt-card-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Asset Card 1: CF1 AI Decisions (Content Strategy) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700" 
                     onclick="togglePromptCard(this)"
+                    data-category="content-strategy"
                     data-title="CF1 AI Decisions"
                     data-prompt='Act as a Content Strategist for a cloud security company. Review the following feature description for clarity, security focus, and tone. Suggest two alternative headlines. [INSERT FEATURE DESCRIPTION]'>
                     
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">CF1 AI Decisions</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A collection of validated prompts for rapid content generation, summarization, and tone-of-voice checks using the Gemini API.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-feather-alt text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">CF1 AI Decisions</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <!-- Card Back (UPDATED: Removed Copy Button, added new informational text and Gem button) -->
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="CF1 AI Decisions">CF1 AI Decisions</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Act as a Content Strategist for a cloud security company. Review the following feature description for clarity, security focus, and tone. Suggest two alternative headlines. [INSERT FEATURE DESCRIPTION]</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                This prompt helps you quickly draft and review feature descriptions for tone and clarity.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Asset Card 2: Core Dash AI Decisions (v3.1) -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                <!-- Asset Card 2: Core Dash AI Decisions (v3.1) (Product Specific) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
                     onclick="togglePromptCard(this)"
+                    data-category="product-specific"
                     data-title="Core Dash AI Decisions (v3.1)"
                     data-prompt='Using the Cloudflare Product Style Guide (v3.1), rewrite the following error message to be polite, actionable, and avoid jargon. Original message: "A 503 error occurred due to an invalid configuration state." New message:'>
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Core Dash AI Decisions (v3.1)</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">The definitive guide for voice, tone, grammar, and terminology across all Cloudflare product interfaces and documentation.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-server text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Core Dash AI Decisions (v3.1)</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Core Dash AI Decisions (v3.1)">Core Dash AI Decisions (v3.1)</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Using the Cloudflare Product Style Guide (v3.1), rewrite the following error message to be polite, actionable, and avoid jargon. Original message: "A 503 error occurred due to an invalid configuration state." New message:</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                This prompt ensures technical error messages are rewritten to be user-friendly and actionable.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Asset Card 3: PCX Video Scripts -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                <!-- Asset Card 3: PCX Video Scripts (Content Strategy) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
                     onclick="togglePromptCard(this)"
+                    data-category="content-strategy"
                     data-title="PCX Video Scripts"
                     data-prompt='Generate a 60-second animated video script explaining the benefits of Zero Trust to an audience of small business owners. Focus on simple analogies and use a friendly, educational tone. Script format should include: [SCENE], [VISUALS], [VOICEOVER].'>
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">PCX Video Scripts</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">Standardized spreadsheet and methodology for reviewing existing content and identifying areas for improvement or deprecation.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-video text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">PCX Video Scripts</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="PCX Video Scripts">PCX Video Scripts</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Generate a 60-second animated video script explaining the benefits of Zero Trust to an audience of small business owners. Focus on simple analogies and use a friendly, educational tone. Script format should include: [SCENE], [VISUALS], [VOICEOVER].</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                Use this script framework to generate video concepts and voiceover text on complex topics like Zero Trust.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Asset Card 4: Feature Naming Prompt -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                <!-- Asset Card 4: Feature Naming Prompt (Content Strategy) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
                     onclick="togglePromptCard(this)"
+                    data-category="content-strategy"
                     data-title="Feature Naming Prompt"
                     data-prompt='Suggest 5 potential names for a new Firewall feature that uses machine learning to detect anomalous traffic patterns. The names must be easy to remember, non-technical, and align with Cloudflare\'s brand guidelines. Provide a 1-sentence rationale for each.'>
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Feature Naming Prompt</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A framework prompt to generate and evaluate new feature names based on clarity, memorability, and brand alignment.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-lightbulb text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Feature Naming Prompt</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Feature Naming Prompt">Feature Naming Prompt</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Suggest 5 potential names for a new Firewall feature that uses machine learning to detect anomalous traffic patterns. The names must be easy to remember, non-technical, and align with Cloudflare\'s brand guidelines. Provide a 1-sentence rationale for each.</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                This is your framework for brainstorming and evaluating new product feature names against brand guidelines.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Row 2 (4 Prompts) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-
-                <!-- Asset Card 5: Error Message Review (v3.1) -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+            
+                <!-- Asset Card 5: Error Message Review (v3.1) (UX Research) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
                     onclick="togglePromptCard(this)"
+                    data-category="ux-research"
                     data-title="Error Message Review (v3.1)"
                     data-prompt='Apply the following system instructions to future outputs: "You are an empathetic UX writer. All error messages must offer a clear solution or next step, even if the user cannot fix it themselves." Rewrite: "Error 404: Resource Not Found."'>
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Error Message Review (v3.1)</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">The definitive prompt set for ensuring error messages are helpful, actionable, and adhere to our user-centric tone.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-user-check text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Error Message Review (v3.1)</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Error Message Review (v3.1)">Error Message Review (v3.1)</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Apply the following system instructions to future outputs: "You are an empathetic UX writer. All error messages must offer a clear solution or next step, even if the user cannot fix it themselves." Rewrite: "Error 404: Resource Not Found."</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                This UX-focused prompt guarantees error messages offer clear solutions and empathetic guidance to the user.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Asset Card 6: API Documentation Summary -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                <!-- Asset Card 6: API Documentation Summary (Product Specific) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
                     onclick="togglePromptCard(this)"
+                    data-category="product-specific"
                     data-title="API Documentation Summary"
                     data-prompt='Summarize the following API documentation update into a release note aimed at developers. Highlight breaking changes and new methods. [INSERT API DOCS LINK/TEXT]'>
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">API Documentation Summary</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A powerful prompt to summarize complex API changes into digestible release notes for general audiences.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-code text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">API Documentation Summary</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="API Documentation Summary">API Documentation Summary</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Summarize the following API documentation update into a release note aimed at developers. Highlight breaking changes and new methods. [INSERT API DOCS LINK/TEXT]</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                Summarize detailed API changes into concise, easy-to-read release notes for various developer audiences.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Asset Card 7: User Journey Mapping Prompt (New) -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                <!-- Asset Card 7: User Journey Mapping Prompt (UX Research) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
                     onclick="togglePromptCard(this)"
+                    data-category="ux-research"
                     data-title="User Journey Mapping Prompt"
                     data-prompt='Identify the 5 core steps a new user takes when setting up a Worker. For each step, identify potential points of friction and suggest a content intervention (tooltip, success message, guide link).'>
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">User Journey Mapping Prompt</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A guided prompt set to help define user personas, pain points, and success metrics for new feature adoption.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-map-marked-alt text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">User Journey Mapping Prompt</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="User Journey Mapping Prompt">User Journey Mapping Prompt</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Identify the 5 core steps a new user takes when setting up a Worker. For each step, identify potential points of friction and suggest a content intervention (tooltip, success message, guide link).</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                Use this to map a new user's journey, identify friction points, and suggest content interventions.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Asset Card 8: Release Note Summary Prompt (New) -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                <!-- Asset Card 8: Release Note Summary Prompt (Content Strategy) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
                     onclick="togglePromptCard(this)"
+                    data-category="content-strategy"
                     data-title="Release Note Summary Prompt"
                     data-prompt='Condense this technical documentation into a Twitter thread (5 tweets maximum) for a general audience. Focus on customer benefit rather than technical implementation details. [INSERT DOC TEXT]'>
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Release Note Summary Prompt</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A system instruction to condense technical release notes into clear, customer-facing communications across different channels.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-bullhorn text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Release Note Summary Prompt</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Release Note Summary Prompt">Release Note Summary Prompt</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Condense this technical documentation into a Twitter thread (5 tweets maximum) for a general audience. Focus on customer benefit rather than technical implementation details. [INSERT DOC TEXT]</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                Condense complex technical documents into short, customer-facing communications for social media channels.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Row 3 (1 Prompt) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-
-                <!-- Asset Card 9: Competitive Analysis Framework (New) -->
-                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+            
+                <!-- Asset Card 9: Competitive Analysis Framework (UX Research) --><div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
                     onclick="togglePromptCard(this)"
+                    data-category="ux-research"
                     data-title="Competitive Analysis Framework"
                     data-prompt='Compare our product messaging regarding DDoS protection against competitors A and B. Analyze their use of fear, uncertainty, and doubt (FUD) versus our proactive, educational tone. Output a JSON array listing key differentiators.'>
                     <div class="card-inner">
                         <div class="card-face card-front">
-                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Competitive Analysis Framework</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A structured prompt to generate a comparative analysis of competitor messaging and identify our core differentiation.</p>
-                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                            <i class="fas fa-balance-scale text-cf-orange text-3xl mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Competitive Analysis Framework</h3>
+                            <!-- Description Paragraph Removed -->
+                            <p class="text-cf-orange font-medium text-sm mt-auto pt-3">Click to View Prompt &rarr;</p>
                         </div>
-                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Competitive Analysis Framework">Competitive Analysis Framework</h4>
-                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Compare our product messaging regarding DDoS protection against competitors A and B. Analyze their use of fear, uncertainty, and doubt (FUD) versus our proactive, educational tone. Output a JSON array listing key differentiators.</p>
-                            
-                            <!-- New Informational Paragraph -->
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                                This framework helps compare our product messaging against competitors to find key differentiators.
                             </p>
-                            
-                            <!-- New Button Link replacing the old copy button -->
-                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                            <a href="#" onclick="useGoogleGem(event, this)" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
                                 <i class="fas fa-rocket mr-2"></i> Use Google Gem
                             </a>
                         </div>
@@ -410,14 +364,12 @@
             </div>
         </section>
 
-        <!-- DESIGN Section (Content Strategy Guides) - Remains the same -->
-        <section id="design" class="section-padding bg-white dark:bg-gray-800 transition-colors duration-300">
+        <!-- DESIGN Section (Content Strategy Guides) - Remains the same --><section id="design" class="section-padding bg-white dark:bg-gray-800 transition-colors duration-300">
             <h2 class="text-3xl sm:text-4xl font-bold text-cf-orange mb-3 pb-1">Content Strategy Guides</h2>
             <p class="text-gray-500 dark:text-gray-400 mb-12 border-b-2 border-gray-200 dark:border-gray-700 pb-3">These cards contain permanent links to our evergreen style guides, Figma components, and reference documentation. Click a link within a card to view the asset.</p>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- NEW CARD: PCX-Built Tools (FIRST POSITION) -->
-                <div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
+                <!-- NEW CARD: PCX-Built Tools (FIRST POSITION) --><div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">PCX-Built Tools</h3>
                     <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Internal apps and specialized tools created by PCX to automate audits, content checks, and accessibility compliance.</p>
                     <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
@@ -439,8 +391,7 @@
                     </ul>
                 </div>
 
-                <!-- Asset Card 6: Strategy Resources (UPDATED) (SECOND POSITION) -->
-                <div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
+                <!-- Asset Card 6: Strategy Resources (UPDATED) (SECOND POSITION) --><div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Content Strategies</h3>
                     <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
                         <li>
@@ -471,8 +422,7 @@
                     </ul>
                 </div>
 
-                <!-- Asset Card 7: Grammer & Word Choice (THIRD POSITION) -->
-                <div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
+                <!-- Asset Card 7: Grammer & Word Choice (THIRD POSITION) --><div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Grammer & Word Choices</h3>
                     <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
                         <li>
@@ -503,26 +453,18 @@
                     </ul>
                 </div>
                 
-                <!-- Cloudflare Brand Guides (Now wraps to next line on desktop) -->
-                <div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
+                <!-- Cloudflare Brand Guides (Now wraps to next line on desktop) --><div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Branding assets</h3>
                     <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Access to the approved set of Phosphor and custom-designed icons for product interfaces and illustrations.</p>
                     <a href="#" class="mt-4 inline-block text-cf-orange font-medium hover:underline text-sm">Browse Icon Library &rarr;</a>
                 </div>
             </div>
         </section>
-
-        <!-- Removed METRICS Section (#metrics) -->
         
     </main>
 
 
-    <!-- JavaScript for Interactions and Firebase (Unified Module) -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, updateDoc, increment, getDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
+    <!-- JavaScript for Interactions --><script type="module">
         // --- DARK MODE LOGIC ---
         
         function updateThemeIcon(isDark) {
@@ -536,6 +478,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             const isDark = document.documentElement.classList.contains('dark');
             updateThemeIcon(isDark);
+            // Since Firebase is removed, we initialize the filter to 'all' on load.
+            filterPrompts('all', document.querySelector('[data-filter="all"]'));
         });
 
         window.toggleDarkMode = function() {
@@ -553,89 +497,6 @@
         // --- END DARK MODE LOGIC ---
 
 
-        // Global Firebase variables accessible within this module
-        let app;
-        let db;
-        let auth;
-        let isFirebaseReady = false;
-
-        // Constants for Firebase Configuration
-        const appId = window.__app_id || 'default-app-id';
-        let firebaseConfig = {};
-        try {
-            const configString = window.__firebase_config || '{}';
-            firebaseConfig = JSON.parse(configString);
-        } catch (e) {
-            console.error("Error parsing __firebase_config:", e);
-        }
-        const initialAuthToken = window.__initial_auth_token || null;
-
-        // We only need the path for prompt tracking now
-        const METRICS_DOC_PATH = `artifacts/${appId}/public/data/metrics/analytics`;
-
-        // --- FIREBASE INITIALIZATION & AUTHENTICATION ---
-        async function initializeFirebase() {
-            setLogLevel('Debug');
-            if (Object.keys(firebaseConfig).length === 0) {
-                console.error("Firebase configuration is empty. Prompt tracking will not function.");
-                return;
-            }
-
-            try {
-                app = initializeApp(firebaseConfig);
-                auth = getAuth(app);
-                db = getFirestore(app);
-
-                // Sign in with custom token if available, otherwise anonymously
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    await signInAnonymously(auth);
-                }
-
-                // Wait for auth state to be confirmed
-                onAuthStateChanged(auth, (user) => {
-                    // We don't need the userId globally here, just ensure auth state is ready
-                    isFirebaseReady = true;
-                    console.log("Firebase initialized and ready for tracking.");
-                });
-            } catch (error) {
-                console.error("Error initializing Firebase:", error);
-            }
-        }
-
-        // --- FIREBASE TRACKING LOGIC ---
-        function getAnalyticsDocRef() {
-            if (!db) return null;
-            return doc(db, METRICS_DOC_PATH);
-        }
-
-        // Only keep the prompt tracking logic
-        async function incrementCounter(field) {
-            const docRef = getAnalyticsDocRef();
-            if (!docRef || !isFirebaseReady) {
-                console.error("Firestore not ready or auth pending for increment.");
-                return;
-            }
-
-            try {
-                const docSnap = await getDoc(docRef);
-                if (!docSnap.exists()) {
-                    // Initialize the document if it doesn't exist
-                    // Note: We are setting prompts_copied and page_views to 0 upon init
-                    await setDoc(docRef, {
-                        page_views: 0,
-                        prompts_copied: 0
-                    });
-                }
-                
-                await updateDoc(docRef, { [field]: increment(1) });
-                console.log(`Successfully incremented ${field}`);
-            } catch (error) {
-                console.error(`Error incrementing ${field}:`, error);
-            }
-        }
-
         // --- PROMPT CARD FLIP LOGIC ---
 
         // Function to flip the card element
@@ -643,37 +504,72 @@
             card.querySelector('.card-inner').classList.toggle('flipped');
         }
 
-        // Function to handle the click on the "Use Gem" link and track the metric
-        window.trackGemUse = function(event) {
-            event.preventDefault(); // Prevent navigation since the link is a placeholder
-            event.stopPropagation(); // Prevent the card from flipping back when clicking the button
-
-            // Increment the prompt use counter
-            incrementCounter('prompts_copied'); 
+        // --- GOOGLE GEM SIMULATION LOGIC (New function) ---
+        window.useGoogleGem = function(event, button) {
+            event.preventDefault(); 
+            event.stopPropagation(); 
             
-            // Provide simple feedback
-            const button = event.currentTarget;
-            const originalHTML = button.innerHTML;
+            // NOTE: Since we cannot launch the Gemini API directly, this function simulates the action
+            // and provides visual feedback that the "launch" action was registered.
 
-            button.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Tracking Use...';
+            const originalHTML = button.innerHTML;
+            
+            // Update button for visual feedback
+            button.innerHTML = '<i class="fas fa-arrow-alt-circle-right mr-2"></i> Launching...'; 
             button.classList.remove('bg-cf-orange');
             button.classList.add('bg-green-600');
-            button.disabled = true;
+            
+            // Disable interaction momentarily
+            button.style.pointerEvents = 'none'; 
 
             setTimeout(() => {
+                // In a real application, this is where navigation or API call would happen.
+                // For this simulation, we just reset the button state.
                 button.innerHTML = originalHTML;
                 button.classList.remove('bg-green-600');
                 button.classList.add('bg-cf-orange');
-                button.disabled = false;
+                button.style.pointerEvents = 'auto'; 
             }, 1500);
         }
         
-        // Initialize Firebase on window load
-        window.onload = initializeFirebase;
+        // --- FILTER LOGIC ---
+
+        /**
+         * Filters the prompt cards based on the selected category.
+         * @param {string} category - The category slug to filter by ('all', 'content-strategy', etc.)
+         * @param {HTMLElement} activePill - The button element that was clicked.
+         */
+        window.filterPrompts = function(category, activePill) {
+            // 1. Set Active Filter Pill Style
+            const filterPills = document.querySelectorAll('.filter-pill');
+            filterPills.forEach(pill => {
+                pill.classList.remove('bg-cf-orange', 'text-white');
+                pill.classList.add('bg-gray-200', 'text-gray-800', 'dark:bg-gray-700', 'dark:text-gray-200');
+            });
+
+            activePill.classList.remove('bg-gray-200', 'text-gray-800', 'dark:bg-gray-700', 'dark:text-gray-200');
+            activePill.classList.add('bg-cf-orange', 'text-white');
+
+            // 2. Filter Cards
+            const cards = document.querySelectorAll('.prompt-card');
+            cards.forEach(card => {
+                // Ensure the card is showing its front face before hiding
+                card.querySelector('.card-inner').classList.remove('flipped');
+                
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (category === 'all' || cardCategory === category) {
+                    // Show the card (using grid properties for smooth layout)
+                    card.classList.remove('hidden');
+                } else {
+                    // Hide the card
+                    card.classList.add('hidden');
+                }
+            });
+        }
     </script>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6 mt-12">
+    <!-- Footer --><footer class="bg-gray-900 text-white py-6 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
             &copy; 2025 PCX Content Strategy Team. All Rights Reserved.
         </div>
