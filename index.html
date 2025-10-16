@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons (Copy) -->
+    <!-- Font Awesome for Icons (Copy, Sun, Moon, Times) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -31,20 +31,38 @@
                 padding: 6rem 4rem;
             }
         }
-        /* Modal Backdrop */
-        .modal-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Card Flip Transition (for the prompt cards) */
+        .prompt-card {
+            min-height: 180px; /* Ensure cards have consistent height for flipping */
+            cursor: pointer;
+            perspective: 1000px;
+        }
+        .card-inner {
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
         }
-        /* Custom Gradient Class for Hero Section */
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        .flipped .card-front {
+            transform: rotateY(180deg);
+        }
+        .flipped .card-back {
+            transform: rotateY(0deg);
+        }
+        /* Custom Gradient Class for Hero Section (Cloudflare/Lava inspired) */
         .lava-gradient {
             background: linear-gradient(135deg, #FF6633 0%, #F6821F 50%, #FBAD41 100%);
         }
@@ -76,28 +94,28 @@
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+    <header class="sticky top-0 z-50 lava-gradient shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Title -->
                 <div class="flex-shrink-0">
-                    <span class="text-2xl font-extrabold text-cf-orange tracking-tight">PCX Content Strategy</span>
-                    <span class="text-gray-500 dark:text-gray-400 text-sm font-medium ml-2 hidden sm:inline">Shared Assets</span>
+                    <span class="text-2xl font-extrabold text-white tracking-tight">PCX Content Strategy</span>
+                    <span class="text-gray-200 text-sm font-medium ml-2 hidden sm:inline">Shared Assets</span>
                 </div>
                 <!-- Navigation Links and Dark Mode Toggle -->
                 <nav class="flex items-center space-x-4">
-                    <a href="#content" class="text-gray-600 dark:text-gray-300 hover:text-cf-orange transition duration-150 font-medium">Prompts</a>
-                    <a href="#video" class="text-gray-600 dark:text-gray-300 hover:text-cf-orange transition duration-150 font-medium">Video </a>
-                    <a href="#design" class="text-gray-600 dark:text-gray-300 hover:text-cf-orange transition duration-150 font-medium">Guides</a>
+                    <a href="#content" class="text-white hover:text-gray-200 transition duration-150 font-medium">Prompts</a>
+                    <a href="#design" class="text-white hover:text-gray-200 transition duration-150 font-medium">Guides</a>
 
                     <!-- Dark Mode Toggle Button -->
-                    <button id="dark-mode-toggle" onclick="toggleDarkMode()" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150">
+                    <button id="dark-mode-toggle" onclick="toggleDarkMode()" class="p-2 rounded-full text-white hover:bg-white hover:bg-opacity-20 transition duration-150">
+                        <!-- Icon updated by JS function `updateThemeIcon` -->
                         <i id="theme-icon" class="fas fa-sun w-5 h-5"></i>
                     </button>
                     
                     <!-- Mobile Menu Button (placeholder) -->
-                    <button class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150">
-                        <svg class="h-6 w-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <button class="md:hidden p-2 rounded-md hover:bg-white hover:bg-opacity-20 transition duration-150">
+                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
                     </button>
@@ -119,115 +137,307 @@
     <!-- Main Content Sections Container -->
     <main class="max-w-7xl mx-auto">
 
-        <!-- CONTENT Section (PCX AI Prompts) - Now 3 Rows, Clickable Cards -->
+        <!-- CONTENT Section (PCX AI Prompts) -->
         <section id="content" class="section-padding bg-white dark:bg-gray-900 transition-colors duration-300">
             <h2 class="text-3xl sm:text-4xl font-bold text-cf-orange mb-3 pb-1">PCX AI Prompts</h2>
-            <p class="text-gray-500 dark:text-gray-400 mb-12 border-b-2 border-gray-200 dark:border-gray-700 pb-3">Click any prompt card below to open the full prompt text in a modal, where you can easily copy it with a single click.</p>
+            <p class="text-gray-500 dark:text-gray-400 mb-12 border-b-2 border-gray-200 dark:border-gray-700 pb-3">Click any prompt card below to reveal the full, ready-to-copy text and instructions for using the Google Gem in Gemini.</p>
 
-            <!-- Row 1 -->
+            <!-- Row 1 (4 Prompts) -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Data is stored in data-prompt attributes for use in the back face -->
 
                 <!-- Asset Card 1: CF1 AI Decisions -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700" 
-                    onclick="showPromptModal(
-                        'CF1 AI Decisions', 
-                        'Act as a Content Strategist for a cloud security company. Review the following feature description for clarity, security focus, and tone. Suggest two alternative headlines. [INSERT FEATURE DESCRIPTION]'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">CF1 AI Decisions</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A collection of validated prompts for rapid content generation, summarization, and tone-of-voice checks using the Gemini API.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700" 
+                    onclick="togglePromptCard(this)"
+                    data-title="CF1 AI Decisions"
+                    data-prompt='Act as a Content Strategist for a cloud security company. Review the following feature description for clarity, security focus, and tone. Suggest two alternative headlines. [INSERT FEATURE DESCRIPTION]'>
+                    
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">CF1 AI Decisions</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A collection of validated prompts for rapid content generation, summarization, and tone-of-voice checks using the Gemini API.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <!-- Card Back (UPDATED: Removed Copy Button, added new informational text and Gem button) -->
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="CF1 AI Decisions">CF1 AI Decisions</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Act as a Content Strategist for a cloud security company. Review the following feature description for clarity, security focus, and tone. Suggest two alternative headlines. [INSERT FEATURE DESCRIPTION]</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Asset Card 2: Core Dash AI Decisions (v3.1) -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700"
-                    onclick="showPromptModal(
-                        'Core Dash AI Decisions (v3.1)', 
-                        'Using the Cloudflare Product Style Guide (v3.1), rewrite the following error message to be polite, actionable, and avoid jargon. Original message: "A 503 error occurred due to an invalid configuration state." New message:'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Core Dash AI Decisions (v3.1)</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">The definitive guide for voice, tone, grammar, and terminology across all Cloudflare product interfaces and documentation.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                    onclick="togglePromptCard(this)"
+                    data-title="Core Dash AI Decisions (v3.1)"
+                    data-prompt='Using the Cloudflare Product Style Guide (v3.1), rewrite the following error message to be polite, actionable, and avoid jargon. Original message: "A 503 error occurred due to an invalid configuration state." New message:'>
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Core Dash AI Decisions (v3.1)</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">The definitive guide for voice, tone, grammar, and terminology across all Cloudflare product interfaces and documentation.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Core Dash AI Decisions (v3.1)">Core Dash AI Decisions (v3.1)</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Using the Cloudflare Product Style Guide (v3.1), rewrite the following error message to be polite, actionable, and avoid jargon. Original message: "A 503 error occurred due to an invalid configuration state." New message:</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Asset Card 3: PCX Video Scripts -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700"
-                    onclick="showPromptModal(
-                        'PCX Video Scripts', 
-                        'Generate a 60-second animated video script explaining the benefits of Zero Trust to an audience of small business owners. Focus on simple analogies and use a friendly, educational tone. Script format should include: [SCENE], [VISUALS], [VOICEOVER].'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">PCX Video Scripts</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">Standardized spreadsheet and methodology for reviewing existing content and identifying areas for improvement or deprecation.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                    onclick="togglePromptCard(this)"
+                    data-title="PCX Video Scripts"
+                    data-prompt='Generate a 60-second animated video script explaining the benefits of Zero Trust to an audience of small business owners. Focus on simple analogies and use a friendly, educational tone. Script format should include: [SCENE], [VISUALS], [VOICEOVER].'>
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">PCX Video Scripts</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">Standardized spreadsheet and methodology for reviewing existing content and identifying areas for improvement or deprecation.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="PCX Video Scripts">PCX Video Scripts</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Generate a 60-second animated video script explaining the benefits of Zero Trust to an audience of small business owners. Focus on simple analogies and use a friendly, educational tone. Script format should include: [SCENE], [VISUALS], [VOICEOVER].</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Asset Card 4: Feature Naming Prompt -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700"
-                    onclick="showPromptModal(
-                        'Feature Naming Prompt', 
-                        'Suggest 5 potential names for a new Firewall feature that uses machine learning to detect anomalous traffic patterns. The names must be easy to remember, non-technical, and align with Cloudflare\'s brand guidelines. Provide a 1-sentence rationale for each.'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Feature Naming Prompt</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A framework prompt to generate and evaluate new feature names based on clarity, memorability, and brand alignment.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                    onclick="togglePromptCard(this)"
+                    data-title="Feature Naming Prompt"
+                    data-prompt='Suggest 5 potential names for a new Firewall feature that uses machine learning to detect anomalous traffic patterns. The names must be easy to remember, non-technical, and align with Cloudflare\'s brand guidelines. Provide a 1-sentence rationale for each.'>
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Feature Naming Prompt</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A framework prompt to generate and evaluate new feature names based on clarity, memorability, and brand alignment.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Feature Naming Prompt">Feature Naming Prompt</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Suggest 5 potential names for a new Firewall feature that uses machine learning to detect anomalous traffic patterns. The names must be easy to remember, non-technical, and align with Cloudflare\'s brand guidelines. Provide a 1-sentence rationale for each.</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Row 2 -->
+            <!-- Row 2 (4 Prompts) -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
 
                 <!-- Asset Card 5: Error Message Review (v3.1) -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700"
-                    onclick="showPromptModal(
-                        'Error Message Review (v3.1)', 
-                        'Apply the following system instructions to future outputs: "You are an empathetic UX writer. All error messages must offer a clear solution or next step, even if the user cannot fix it themselves." Rewrite: "Error 404: Resource Not Found."'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Error Message Review (v3.1)</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">The definitive prompt set for ensuring error messages are helpful, actionable, and adhere to our user-centric tone.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                    onclick="togglePromptCard(this)"
+                    data-title="Error Message Review (v3.1)"
+                    data-prompt='Apply the following system instructions to future outputs: "You are an empathetic UX writer. All error messages must offer a clear solution or next step, even if the user cannot fix it themselves." Rewrite: "Error 404: Resource Not Found."'>
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Error Message Review (v3.1)</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">The definitive prompt set for ensuring error messages are helpful, actionable, and adhere to our user-centric tone.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Error Message Review (v3.1)">Error Message Review (v3.1)</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Apply the following system instructions to future outputs: "You are an empathetic UX writer. All error messages must offer a clear solution or next step, even if the user cannot fix it themselves." Rewrite: "Error 404: Resource Not Found."</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Asset Card 6: API Documentation Summary -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700"
-                    onclick="showPromptModal(
-                        'API Documentation Summary', 
-                        'Summarize the following API documentation update into a release note aimed at developers. Highlight breaking changes and new methods. [INSERT API DOCS LINK/TEXT]'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">API Documentation Summary</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A powerful prompt to summarize complex API changes into digestible release notes for general audiences.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                    onclick="togglePromptCard(this)"
+                    data-title="API Documentation Summary"
+                    data-prompt='Summarize the following API documentation update into a release note aimed at developers. Highlight breaking changes and new methods. [INSERT API DOCS LINK/TEXT]'>
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">API Documentation Summary</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A powerful prompt to summarize complex API changes into digestible release notes for general audiences.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="API Documentation Summary">API Documentation Summary</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Summarize the following API documentation update into a release note aimed at developers. Highlight breaking changes and new methods. [INSERT API DOCS LINK/TEXT]</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Asset Card 7: User Journey Mapping Prompt (New) -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700"
-                    onclick="showPromptModal(
-                        'User Journey Mapping Prompt', 
-                        'Identify the 5 core steps a new user takes when setting up a Worker. For each step, identify potential points of friction and suggest a content intervention (tooltip, success message, guide link).'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">User Journey Mapping Prompt</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A guided prompt set to help define user personas, pain points, and success metrics for new feature adoption.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                    onclick="togglePromptCard(this)"
+                    data-title="User Journey Mapping Prompt"
+                    data-prompt='Identify the 5 core steps a new user takes when setting up a Worker. For each step, identify potential points of friction and suggest a content intervention (tooltip, success message, guide link).'>
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">User Journey Mapping Prompt</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A guided prompt set to help define user personas, pain points, and success metrics for new feature adoption.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="User Journey Mapping Prompt">User Journey Mapping Prompt</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Identify the 5 core steps a new user takes when setting up a Worker. For each step, identify potential points of friction and suggest a content intervention (tooltip, success message, guide link).</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Asset Card 8: Release Note Summary Prompt (New) -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700"
-                    onclick="showPromptModal(
-                        'Release Note Summary Prompt', 
-                        'Condense this technical documentation into a Twitter thread (5 tweets maximum) for a general audience. Focus on customer benefit rather than technical implementation details. [INSERT DOC TEXT]'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Release Note Summary Prompt</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A system instruction to condense technical release notes into clear, customer-facing communications across different channels.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                    onclick="togglePromptCard(this)"
+                    data-title="Release Note Summary Prompt"
+                    data-prompt='Condense this technical documentation into a Twitter thread (5 tweets maximum) for a general audience. Focus on customer benefit rather than technical implementation details. [INSERT DOC TEXT]'>
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Release Note Summary Prompt</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A system instruction to condense technical release notes into clear, customer-facing communications across different channels.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Release Note Summary Prompt">Release Note Summary Prompt</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Condense this technical documentation into a Twitter thread (5 tweets maximum) for a general audience. Focus on customer benefit rather than technical implementation details. [INSERT DOC TEXT]</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Row 3 (Contains only 1 card now) -->
+            <!-- Row 3 (1 Prompt) -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
 
                 <!-- Asset Card 9: Competitive Analysis Framework (New) -->
-                <div class="bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer hover:shadow-2xl dark:hover:shadow-gray-700"
-                    onclick="showPromptModal(
-                        'Competitive Analysis Framework', 
-                        'Compare our product messaging regarding DDoS protection against competitors A and B. Analyze their use of fear, uncertainty, and doubt (FUD) versus our proactive, educational tone. Output a JSON array listing key differentiators.'
-                    )">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Competitive Analysis Framework</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A structured prompt to generate a comparative analysis of competitor messaging and identify our core differentiation.</p>
+                <div class="prompt-card bg-cf-light dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700"
+                    onclick="togglePromptCard(this)"
+                    data-title="Competitive Analysis Framework"
+                    data-prompt='Compare our product messaging regarding DDoS protection against competitors A and B. Analyze their use of fear, uncertainty, and doubt (FUD) versus our proactive, educational tone. Output a JSON array listing key differentiators.'>
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">Competitive Analysis Framework</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A structured prompt to generate a comparative analysis of competitor messaging and identify our core differentiation.</p>
+                            <p class="text-cf-orange font-medium text-sm mt-auto">Click to View Prompt &rarr;</p>
+                        </div>
+                        <div class="card-face card-back p-6 rounded-xl shadow-lg bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 truncate" title="Competitive Analysis Framework">Competitive Analysis Framework</h4>
+                            <p class="prompt-text-display text-xs font-mono text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">Compare our product messaging regarding DDoS protection against competitors A and B. Analyze their use of fear, uncertainty, and doubt (FUD) versus our proactive, educational tone. Output a JSON array listing key differentiators.</p>
+                            
+                            <!-- New Informational Paragraph -->
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                                This prompt is designed for the Gemini API. Copy the text above and use it with the Google search grounding tool (Google Gem) activated for the best, most up-to-date results.
+                            </p>
+                            
+                            <!-- New Button Link replacing the old copy button -->
+                            <a href="#" onclick="event.stopPropagation(); trackGemUse(event);" class="inline-flex items-center justify-center w-full px-4 py-2 bg-cf-orange text-white font-bold rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                                <i class="fas fa-rocket mr-2"></i> Use Google Gem
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-       
+        <!-- DESIGN Section (Content Strategy Guides) - Remains the same -->
+        <section id="design" class="section-padding bg-white dark:bg-gray-800 transition-colors duration-300">
+            <h2 class="text-3xl sm:text-4xl font-bold text-cf-orange mb-3 pb-1">Content Strategy Guides</h2>
+            <p class="text-gray-500 dark:text-gray-400 mb-12 border-b-2 border-gray-200 dark:border-gray-700 pb-3">These cards contain permanent links to our evergreen style guides, Figma components, and reference documentation. Click a link within a card to view the asset.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- NEW CARD: PCX-Built Tools (FIRST POSITION) -->
+                <div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">PCX-Built Tools</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Internal apps and specialized tools created by PCX to automate audits, content checks, and accessibility compliance.</p>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+                        <li>
+                            <a href="#" class="text-cf-orange font-medium hover:underline flex items-center">
+                                Automated Link Checker &rarr;
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-cf-orange font-medium hover:underline flex items-center">
+                                Tone-of-Voice Audit App &rarr;
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-cf-orange font-medium hover:underline flex items-center">
+                                Taxonomy Validator &rarr;
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
                 <!-- Asset Card 6: Strategy Resources (UPDATED) (SECOND POSITION) -->
                 <div class="bg-cf-light dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-600">
@@ -302,129 +512,32 @@
             </div>
         </section>
 
-        <!-- METRICS Section (Real-Time Counters) -->
-        <section id="metrics" class="section-padding bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-700 dark:text-gray-200 mb-12 border-b-2 border-gray-300 dark:border-gray-700 pb-3">Usage Metrics (Real-Time)</h2>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Card 1: Prompts Copied -->
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 text-center">
-                    <p class="text-5xl font-extrabold text-cf-orange" id="metric-prompts-copied">0</p>
-                    <p class="mt-2 text-lg font-semibold text-gray-700 dark:text-gray-200">AI Prompts Copied</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Total utility of content strategies.</p>
-                </div>
-
-                <!-- Card 2: Videos Copied -->
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 text-center">
-                    <p class="text-5xl font-extrabold text-cf-orange" id="metric-videos-copied">0</p>
-                    <p class="mt-2 text-lg font-semibold text-gray-700 dark:text-gray-200">Video Assets Copied</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Total reuse of motion graphics.</p>
-                </div>
-
-                <!-- Card 3: Page Views -->
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 text-center">
-                    <p class="text-5xl font-extrabold text-cf-orange" id="metric-page-views">0</p>
-                    <p class="mt-2 text-lg font-semibold text-gray-700 dark:text-gray-200">Total Site Views</p>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Overall exposure of shared assets.</p>
-                </div>
-            </div>
-        </section>
-       
+        <!-- Removed METRICS Section (#metrics) -->
+        
     </main>
-
-    <!-- PROMPT MODAL STRUCTURE -->
-    <div id="prompt-modal" class="modal-backdrop hidden" onclick="if (event.target.id === 'prompt-modal') closeModal()">
-        <div class="bg-white dark:bg-gray-800 w-11/12 md:w-3/4 lg:w-1/2 p-6 rounded-2xl shadow-2xl relative">
-            
-            <!-- Modal Header -->
-            <div class="flex justify-between items-start mb-4 border-b pb-3 border-gray-200 dark:border-gray-700">
-                <h3 id="modal-title" class="text-2xl font-bold text-gray-900 dark:text-gray-100 truncate">Prompt Title</h3>
-                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <!-- Scrollable Prompt Text Area -->
-            <div class="relative h-64 md:h-80 mb-4">
-                <textarea id="modal-prompt-text" readonly 
-                          class="w-full h-full p-4 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-cf-orange bg-gray-50 dark:bg-gray-900 overflow-y-scroll"
-                          placeholder="Loading prompt content...">
-                </textarea>
-            </div>
-
-            <!-- Copy Button -->
-            <div class="flex justify-end">
-                <button id="copy-modal-button" onclick="copyModalContent(this)" class="inline-flex items-center px-4 py-2 bg-cf-orange text-white font-medium rounded-lg shadow-md hover:opacity-90 transition duration-300">
-                    <i class="fas fa-copy mr-2"></i>
-                    Copy Prompt
-                </button>
-            </div>
-
-        </div>
-    </div>
-    <!-- END PROMPT MODAL STRUCTURE -->
-
-    <!-- ASSET MODAL STRUCTURE (for Video/Design Assets) -->
-    <div id="asset-modal" class="modal-backdrop hidden" onclick="if (event.target.id === 'asset-modal') closeAssetModal()">
-        <div class="bg-white dark:bg-gray-800 w-11/12 md:w-3/4 lg:w-1/3 p-6 rounded-2xl shadow-2xl relative">
-            
-            <!-- Modal Header/Title -->
-            <div class="flex justify-between items-start mb-4 border-b pb-3 border-gray-200 dark:border-gray-700">
-                <h3 id="asset-modal-title" class="text-2xl font-bold text-gray-900 dark:text-gray-100 truncate">Asset Title</h3>
-                <button onclick="closeAssetModal()" class="text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <!-- Asset Display and Copyable Link -->
-            <div class="mb-4">
-                <img id="asset-modal-image" src="" class="w-full h-auto object-cover rounded-lg mb-4 shadow-md" alt="Asset Preview">
-                
-                <p class="text-gray-600 dark:text-gray-300 mb-2 text-sm font-semibold">Asset URL:</p>
-                <textarea id="asset-modal-url-display" readonly 
-                          class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 font-mono text-xs resize-none focus:outline-none focus:ring-2 focus:ring-cf-orange bg-gray-50 dark:bg-gray-900 h-10 overflow-hidden"
-                          rows="1" placeholder="URL will appear here.">
-                </textarea>
-            </div>
-
-            <!-- Copy Button (Asset) -->
-            <div class="flex justify-end">
-                <button id="copy-asset-modal-button" onclick="copyAssetModalContent(this)" class="inline-flex items-center px-4 py-2 bg-cf-orange text-white font-medium rounded-lg shadow-md hover:opacity-90 transition duration-300">
-                    <i class="fas fa-copy mr-2"></i>
-                    Copy Asset URL
-                </button>
-            </div>
-
-        </div>
-    </div>
-    <!-- END ASSET MODAL STRUCTURE -->
 
 
     <!-- JavaScript for Interactions and Firebase (Unified Module) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, onSnapshot, setDoc, updateDoc, increment, getDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, doc, setDoc, updateDoc, increment, getDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // --- DARK MODE LOGIC START ---
+        // --- DARK MODE LOGIC ---
         
-        // Function to set the icon on load or toggle
         function updateThemeIcon(isDark) {
             const icon = document.getElementById('theme-icon');
             if (icon) {
                 icon.classList.remove('fa-sun', 'fa-moon');
-                icon.classList.add(isDark ? 'fa-sun' : 'fa-moon');
+                icon.classList.add(isDark ? 'fa-sun' : 'fa-moon'); 
             }
         }
         
-        // Initial icon setup (runs once after DOM is loaded)
         document.addEventListener('DOMContentLoaded', () => {
             const isDark = document.documentElement.classList.contains('dark');
             updateThemeIcon(isDark);
         });
 
-        // Toggle function exposed to the global scope
         window.toggleDarkMode = function() {
             const html = document.documentElement;
             const isDark = html.classList.toggle('dark');
@@ -437,18 +550,16 @@
                 localStorage.theme = 'light';
             }
         }
-        // --- DARK MODE LOGIC END ---
+        // --- END DARK MODE LOGIC ---
 
 
         // Global Firebase variables accessible within this module
         let app;
         let db;
         let auth;
-        let userId;
         let isFirebaseReady = false;
 
         // Constants for Firebase Configuration
-        // Accessing globals via window object to prevent potential SyntaxErrors inside module scope
         const appId = window.__app_id || 'default-app-id';
         let firebaseConfig = {};
         try {
@@ -459,13 +570,14 @@
         }
         const initialAuthToken = window.__initial_auth_token || null;
 
+        // We only need the path for prompt tracking now
         const METRICS_DOC_PATH = `artifacts/${appId}/public/data/metrics/analytics`;
 
         // --- FIREBASE INITIALIZATION & AUTHENTICATION ---
         async function initializeFirebase() {
             setLogLevel('Debug');
             if (Object.keys(firebaseConfig).length === 0) {
-                console.error("Firebase configuration is empty. Metrics will not function.");
+                console.error("Firebase configuration is empty. Prompt tracking will not function.");
                 return;
             }
 
@@ -474,6 +586,7 @@
                 auth = getAuth(app);
                 db = getFirestore(app);
 
+                // Sign in with custom token if available, otherwise anonymously
                 if (initialAuthToken) {
                     await signInWithCustomToken(auth, initialAuthToken);
                 } else {
@@ -482,29 +595,22 @@
 
                 // Wait for auth state to be confirmed
                 onAuthStateChanged(auth, (user) => {
-                    if (user) {
-                        userId = user.uid;
-                        isFirebaseReady = true;
-                        console.log("Firebase initialized. User ID:", userId);
-                        setupMetricsTracking();
-                    } else {
-                        // Fallback if anonymous sign-in fails
-                        userId = crypto.randomUUID();
-                        console.error("Firebase auth failed, using random UUID for userId:", userId);
-                        setupMetricsTracking();
-                    }
+                    // We don't need the userId globally here, just ensure auth state is ready
+                    isFirebaseReady = true;
+                    console.log("Firebase initialized and ready for tracking.");
                 });
             } catch (error) {
                 console.error("Error initializing Firebase:", error);
             }
         }
 
-        // --- FIREBASE METRICS LOGIC ---
+        // --- FIREBASE TRACKING LOGIC ---
         function getAnalyticsDocRef() {
             if (!db) return null;
             return doc(db, METRICS_DOC_PATH);
         }
 
+        // Only keep the prompt tracking logic
         async function incrementCounter(field) {
             const docRef = getAnalyticsDocRef();
             if (!docRef || !isFirebaseReady) {
@@ -513,18 +619,16 @@
             }
 
             try {
-                // Check if the document exists first
                 const docSnap = await getDoc(docRef);
                 if (!docSnap.exists()) {
-                    // Initialize the document with default values
+                    // Initialize the document if it doesn't exist
+                    // Note: We are setting prompts_copied and page_views to 0 upon init
                     await setDoc(docRef, {
                         page_views: 0,
-                        prompts_copied: 0,
-                        videos_copied: 0
+                        prompts_copied: 0
                     });
                 }
                 
-                // Perform the increment
                 await updateDoc(docRef, { [field]: increment(1) });
                 console.log(`Successfully incremented ${field}`);
             } catch (error) {
@@ -532,72 +636,26 @@
             }
         }
 
-        function setupMetricsTracking() {
-            const docRef = getAnalyticsDocRef();
-            if (!docRef) {
-                console.error("Metrics setup aborted: Firestore not ready.");
-                return;
-            }
-            
-            // 1. Increment Page Views immediately
-            incrementCounter('page_views');
+        // --- PROMPT CARD FLIP LOGIC ---
 
-            // 2. Set up Real-time listener for all three metrics
-            onSnapshot(docRef, (doc) => {
-                if (doc.exists()) {
-                    const data = doc.data();
-                    document.getElementById('metric-page-views').textContent = data.page_views || 0;
-                    document.getElementById('metric-prompts-copied').textContent = data.prompts_copied || 0;
-                    document.getElementById('metric-videos-copied').textContent = data.videos_copied || 0;
-                } else {
-                    // Document doesn't exist yet, display 0s
-                    document.getElementById('metric-page-views').textContent = '0';
-                    document.getElementById('metric-prompts-copied').textContent = '0';
-                    document.getElementById('metric-videos-copied').textContent = '0';
-                }
-            }, (error) => {
-                console.error("Error listening to metrics:", error);
-                document.getElementById('metric-page-views').textContent = 'ERROR';
-            });
+        // Function to flip the card element
+        window.togglePromptCard = function(card) {
+            card.querySelector('.card-inner').classList.toggle('flipped');
         }
 
-        // --- UTILITY/MODAL FUNCTIONS (Made globally accessible by attaching to window) ---
+        // Function to handle the click on the "Use Gem" link and track the metric
+        window.trackGemUse = function(event) {
+            event.preventDefault(); // Prevent navigation since the link is a placeholder
+            event.stopPropagation(); // Prevent the card from flipping back when clicking the button
 
-        // Function to open the prompt modal and load content
-        window.showPromptModal = function(title, promptText) {
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-prompt-text').value = promptText;
-            document.getElementById('prompt-modal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden'); // Prevent background scrolling
-        }
-
-        // Function to close the prompt modal
-        window.closeModal = function() {
-            document.getElementById('prompt-modal').classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-            // Reset button state just in case
-            const button = document.getElementById('copy-modal-button');
-            button.innerHTML = '<i class="fas fa-copy mr-2"></i>Copy Prompt';
-            button.classList.remove('bg-green-600');
-            button.classList.add('bg-cf-orange');
-        }
-
-        // Function to copy the prompt modal content and track metric
-        window.copyModalContent = function(button) {
-            const textarea = document.getElementById('modal-prompt-text');
-            
-            textarea.select();
-            textarea.setSelectionRange(0, 99999); 
-
-            document.execCommand('copy');
-            
-            // Increment the prompt copy counter
+            // Increment the prompt use counter
             incrementCounter('prompts_copied'); 
-
-            // Provide visual feedback
+            
+            // Provide simple feedback
+            const button = event.currentTarget;
             const originalHTML = button.innerHTML;
 
-            button.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Copied! ✅';
+            button.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Tracking Use...';
             button.classList.remove('bg-cf-orange');
             button.classList.add('bg-green-600');
             button.disabled = true;
@@ -608,72 +666,6 @@
                 button.classList.add('bg-cf-orange');
                 button.disabled = false;
             }, 1500);
-        }
-        
-        // --- ASSET MODAL FUNCTIONS ---
-        // The imageUrl parameter is used for the image src and the assetUrl parameter for the copyable textarea value.
-        window.showAssetModal = function(title, imageUrl, assetUrl) {
-            document.getElementById('asset-modal-title').textContent = title;
-            document.getElementById('asset-modal-image').src = imageUrl;
-            document.getElementById('asset-modal-url-display').value = assetUrl;
-            document.getElementById('asset-modal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-            
-            const button = document.getElementById('copy-asset-modal-button');
-            button.innerHTML = '<i class="fas fa-copy mr-2"></i>Copy Asset URL';
-            button.classList.remove('bg-green-600');
-            button.classList.add('bg-cf-orange');
-            button.disabled = false;
-        }
-
-        window.closeAssetModal = function() {
-            document.getElementById('asset-modal').classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-
-        // Function to copy asset URL and track metric
-        window.copyAssetModalContent = function(button) {
-            const textarea = document.getElementById('asset-modal-url-display');
-            
-            textarea.select();
-            textarea.setSelectionRange(0, 99999);
-
-            document.execCommand('copy');
-            
-            // Increment the video copy counter
-            incrementCounter('videos_copied'); 
-
-            const originalHTML = button.innerHTML;
-
-            button.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Copied! ✅';
-            button.classList.remove('bg-cf-orange');
-            button.classList.add('bg-green-600');
-            button.disabled = true;
-
-            setTimeout(() => {
-                button.innerHTML = originalHTML;
-                button.classList.remove('bg-green-600');
-                button.classList.add('bg-cf-orange');
-                button.disabled = false;
-            }, 1500);
-        }
-
-        // --- TOGGLE FUNCTION ---
-        window.toggleAssets = function() {
-            const extraAssetsGrid = document.getElementById('extra-assets-grid');
-            const toggleButton = document.getElementById('toggle-button');
-            const toggleText = document.getElementById('toggle-text');
-            const toggleIcon = document.getElementById('toggle-icon');
-
-            if (extraAssetsGrid.classList.contains('hidden')) {
-                extraAssetsGrid.classList.remove('hidden');
-                toggleText.textContent = 'Show Fewer Assets';
-                toggleIcon.classList.add('rotate-180');
-            } else {
-                extraAssetsGrid.classList.add('hidden');
-                toggleText.textContent = 'Show 20 More Assets';
-                toggleIcon.classList.remove('rotate-180');
-            }
         }
         
         // Initialize Firebase on window load
@@ -689,4 +681,3 @@
 
 </body>
 </html>
-
