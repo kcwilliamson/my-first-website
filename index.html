@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Design AI Toolkit</title>
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter Font from Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Load Lucide icons (or you could use FontAwesome/SVG) --><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Load Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Load Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
         /* Define custom colors and font based on requirements */
         :root {
@@ -68,9 +74,11 @@
     </style>
 </head>
 <body class="text-neutral-dark">
-    <!-- Header Section (kept simple for navigation) --><header class="bg-white shadow-sm sticky top-0 z-10">
+    
+    <!-- Top Header Bar -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-neutral-dark tracking-tight">
+            <h1 class="text-xl font-bold text-neutral-dark tracking-tight" style="font-weight: 700;">
                 AI Content Accelerator Hub
             </h1>
             <span class="text-sm font-light text-gray-500 hidden sm:block">
@@ -79,9 +87,12 @@
         </div>
     </header>
 
-    <!-- Main Content Area --><main class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         
-        <!-- Introduction/Context Section - Now with gradient background --><section class="hero-gradient text-white text-center py-16 px-4 rounded-lg shadow-xl mb-12">
+        <!-- Gradient Hero Section (Title and Description) -->
+        <section class="hero-gradient text-white text-center py-16 px-4 rounded-xl shadow-xl mb-12">
             <h2 class="text-4xl sm:text-5xl font-extrabold mb-4" style="font-weight: 700;">
                 <span class="text-white">Gems</span> & AI Tools for Clarity
             </h2>
@@ -90,61 +101,73 @@
             </p>
         </section>
 
-        <!-- Content Gems Section --><section class="mb-16">
+        
+        <!-- Content Gems Section -->
+        <section class="mb-16">
             <h3 class="text-3xl font-semibold mb-6 text-neutral-dark border-b pb-2 border-gray-200 flex items-center">
                 <i data-lucide="sparkles" class="icon-gem mr-3 w-7 h-7"></i> 
                 Content Gems
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1: UX Tone & Voice Refiner --><a href="https://gemini.google.com/gem/1pTiMx6Uv9H1Irl0QpXoaeCNS0MHpPy58?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
+                
+                <!-- GEM 1: Find a home for your product -->
+                <a href="https://gemini.google.com/gem/1pTiMx6Uv9H1Irl0QpXoaeCNS0MHvPy58?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
                     <div class="flex items-center mb-3">
-                        <i data-lucide="speech" class="icon-gem w-6 h-6 mr-3"></i>
-                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">UX Tone & Voice Refiner</h4>
+                        <i data-lucide="compass" class="icon-gem w-6 h-6 mr-3"></i>
+                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">Find a home for your product</h4>
                     </div>
-                    <p class="text-gray-600 text-sm font-light">Quickly adjust and refine existing copy to match specific brand tone, voice, and style guide requirements.</p>
+                    <p class="text-gray-600 text-sm font-light">Analyze a new Cloudflare solution to determine its most suitable placement within the Cloudflare dashboard's navigation groups.</p>
                 </a>
                 
-                <!-- Card 2: Microcopy Generator --><a href="https://gemini.google.com/gem/1E3WhrUNBA25mSfauGASZyBefS4pN0NUX?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
+                <!-- GEM 2: Empty State Content (Assigned remaining link) -->
+                <a href="https://gemini.google.com/gem/1kD58Sb0fvthDiq8CHb0CdMcWhLvsTmHO?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
                     <div class="flex items-center mb-3">
-                        <i data-lucide="edit" class="icon-gem w-6 h-6 mr-3"></i>
-                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">Microcopy Generator</h4>
+                        <i data-lucide="container" class="icon-gem w-6 h-6 mr-3"></i>
+                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">Empty State Content</h4>
                     </div>
-                    <p class="text-gray-600 text-sm font-light">Brainstorm multiple variants for UI labels, error messages, tooltips, and other short-form microcopy in seconds.</p>
+                    <p class="text-gray-600 text-sm font-light">Provide suggested empty state content for the features described. Reference the guidelines and example of Cloudflare One’s standard empty state template.</p>
                 </a>
 
-                <!-- Card 3: Feature Naming & Tagline Brainstormer --><a href="https://gemini.google.com/gem/1imM62ICZkBhUqcj8V2OkIqFslop5HZbX?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
+                <!-- GEM 3: ZeroTrust IA AI -->
+                <a href="https://gemini.google.com/gem/1imM62ICZkBhUqcj8V2OkIqFslop5HZbX?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
                     <div class="flex items-center mb-3">
-                        <i data-lucide="lightbulb" class="icon-gem w-6 h-6 mr-3"></i>
-                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">Feature Naming & Tagline Brainstormer</h4>
+                        <i data-lucide="shield-check" class="icon-gem w-6 h-6 mr-3"></i>
+                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">ZeroTrust IA AI</h4>
                     </div>
-                    <p class="text-gray-600 text-sm font-light">Generate creative and strategic names, taglines, and descriptions for new features or products based on core benefits.</p>
+                    <p class="text-gray-600 text-sm font-light">Help Cloudflare Zero Trust product managers and product designers find the best place to put new features within the navigation.</p>
                 </a>
 
-                <!-- Card 4: Complexity to Clarity Simplifier --><a href="https://gemini.google.com/gem/145rrup4cFfkf87sEVqzR-lEY_JIlmIL3?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
+                <!-- GEM 4: Final Video Tech Review -->
+                <a href="https://gemini.google.com/gem/1E3WhrUNBA25mSfauGASZyBefS4pN0NUX?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
                     <div class="flex items-center mb-3">
-                        <i data-lucide="zap" class="icon-gem w-6 h-6 mr-3"></i>
-                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">Complexity to Clarity Simplifier</h4>
+                        <i data-lucide="monitor-check" class="icon-gem w-6 h-6 mr-3"></i>
+                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">Final Video Tech Review</h4>
                     </div>
-                    <p class="text-gray-600 text-sm font-light">Take highly technical or complex product descriptions and rewrite them into clear, user-friendly language for broader audiences.</p>
+                    <p class="text-gray-600 text-sm font-light">Scrutinize a video's technical content (script, narration, and visuals) against the established standards of the Cloudflare Developer documentation (developers.cloudflare.com).</p>
                 </a>
 
-                <!-- Card 5: User Journey Mapper & Content Outliner --><a href="https://gemini.google.com/gem/1kD58Sb0fvthDiq8CHb0CdMcWhLvsTmHO?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
+                <!-- GEM 5: Video Series Brainstorm -->
+                <a href="https://gemini.google.com/gem/145rrup4cFfkf87sEVqzR-lEY_JIlmIL3?usp=sharing" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block">
                     <div class="flex items-center mb-3">
-                        <i data-lucide="route" class="icon-gem w-6 h-6 mr-3"></i>
-                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">User Journey Mapper & Content Outliner</h4>
+                        <i data-lucide="video" class="icon-gem w-6 h-6 mr-3"></i>
+                        <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">Video Series Brainstorm</h4>
                     </div>
-                    <p class="text-gray-600 text-sm font-light">Outline content needs and map user touchpoints across different stages of a user flow, ensuring narrative consistency.</p>
+                    <p class="text-gray-600 text-sm font-light">Create a series of video concepts to help users of all experience levels understand how Cloudflare products and concepts help them, the internet, or their company.</p>
                 </a>
             </div>
         </section>
 
-        <!-- AI Tools Section --><section>
+        
+        <!-- AI Tools Section -->
+        <section>
             <h3 class="text-3xl font-semibold mb-6 text-neutral-dark border-b pb-2 border-gray-200 flex items-center">
                 <i data-lucide="wrench" class="icon-tool mr-3 w-7 h-7" style="color: #FF6633;"></i> 
                 AI Tools
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Tool 1: PCX CLUE Index --><a href="https://clue.cloudflarecontent.com/" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block border-l-4 border-cf-med">
+                
+                <!-- TOOL 1: PCX CLUE Index -->
+                <a href="https://clue.cloudflarecontent.com/" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block border-l-4 border-cf-med">
                     <div class="flex items-center mb-3">
                         <i data-lucide="clipboard-list" class="icon-tool w-6 h-6 mr-3" style="color: #FF6633;"></i>
                         <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">PCX CLUE Index</h4>
@@ -152,7 +175,8 @@
                     <p class="text-gray-600 text-sm font-light">Evaluates UI, API, and email content against UX content best practices and Cloudflare's internal style guide for legibility and ease of use.</p>
                 </a>
                 
-                <!-- Tool 2: CloudSpeaker --><a href="https://cloudspeaker.ml.cfdata.org/" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block border-l-4 border-cf-med">
+                <!-- TOOL 2: CloudSpeaker -->
+                <a href="https://cloudspeaker.ml.cfdata.org/" target="_blank" class="tool-card bg-white p-6 rounded-xl shadow-card hover:shadow-card-hover transform hover:scale-[1.01] transition-all duration-300 block border-l-4 border-cf-med">
                     <div class="flex items-center mb-3">
                         <i data-lucide="megaphone" class="icon-tool w-6 h-6 mr-3" style="color: #FF6633;"></i>
                         <h4 class="text-xl font-semibold text-neutral-dark" style="font-weight: 600;">CloudSpeaker</h4>
@@ -163,7 +187,9 @@
         </section>
     </main>
 
-    <!-- Footer Section --><footer class="bg-cf-light mt-12 py-8">
+    
+    <!-- Footer -->
+    <footer class="bg-cf-light mt-12 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-neutral-dark text-sm font-semibold">
                 Leverage AI responsibly to accelerate content iteration. All tools and gems are provided for internal team use.
@@ -171,9 +197,10 @@
         </div>
     </footer>
 
-    <!-- Initialize Lucide Icons --><script>
+    
+    <!-- Initialize Lucide Icons -->
+    <script>
         lucide.createIcons();
     </script>
 </body>
 </html>
-
